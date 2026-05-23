@@ -64,7 +64,7 @@
   width: 64px;
   height: 64px;
   opacity: 0.9;
-  background: linear-gradient(135deg, #ffd36a 0%, #ff9a36 48%, #ff6b2d 100%);
+  background: linear-gradient(135deg, #52afe6 0%, #31b2ee 48%, #21a2ec 100%);
 }
 
 .stat-card:nth-child(1) .stat-deco,
@@ -80,7 +80,7 @@
   bottom: -6px;
   width: 42px;
   height: 42px;
-  background: linear-gradient(135deg, #fff1a8 0%, #ff8f31 58%, #ff5a2a 100%);
+  background: linear-gradient(135deg, #34aad1 0%, #2ea9f0 58%, #1f98e9 100%);
   clip-path: polygon(0 0, 100% 72%, 72% 100%);
   opacity: 0.86;
 }
@@ -102,7 +102,7 @@
   bottom: 0;
   width: 54px;
   height: 54px;
-  background: linear-gradient(135deg, #ffbf4a, #ff7f2a);
+  background: linear-gradient(135deg, #47b4ee, #30a7f1);
   clip-path: polygon(0 100%, 0 0, 100% 100%);
   opacity: 0.9;
 }
@@ -124,7 +124,7 @@
   height: 30px;
   border-radius: 6px;
   transform: rotate(45deg);
-  background: linear-gradient(135deg, #ffd36a, #ff7930);
+  background: linear-gradient(135deg, #52bcee, #30baff);
   opacity: 0.85;
 }
 

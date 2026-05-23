@@ -45,12 +45,12 @@ export default function Footer() {
           <div className="footer-links-group">
             <h4>Navigatsiya</h4>
             <ul>
-              <li><Link to="/about">Colba haqida</Link></li>
+              {/* <li><Link to="/about">Colba haqida</Link></li> */}
               <li><Link to="/advantages">Afzalliklar</Link></li>
               <li><Link to="/results">Natijalar</Link></li>
               <li><Link to="/teachers">Ustozlar</Link></li>
               <li><Link to="/locations">Filiallar</Link></li>
-              <li><Link to="/faq">FAQ</Link></li>
+              {/* <li><Link to="/faq">FAQ</Link></li> */}
             </ul>
           </div>
 

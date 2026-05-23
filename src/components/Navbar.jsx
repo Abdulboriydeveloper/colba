@@ -17,8 +17,9 @@ export default function Navbar() {
     { to: '/about', label: 'Colba haqida' },
     { to: '/advantages', label: 'Afzalliklar' },
     { to: '/results', label: 'Natijalar' },
-    { to: '/teachers', label: "O'quv tizimi" },
+    { to: '/teachers', label: "Ustozlar" },
     { to: '/locations', label: 'Filiallar' },
+    { to: '/system', label: "O'quv tizimi" },
     { to: '/faq', label: 'FAQ' },
   ]
 

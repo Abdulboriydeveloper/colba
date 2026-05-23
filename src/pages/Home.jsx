@@ -27,7 +27,7 @@ const features = [
   },
   {
     icon: '📚',
-    color: '#f77f00',
+    color: ' 49bdfc',
     title: 'Har kunlik darslar',
     desc: "Haftasiga 5 kun, 4-5 soatdan o'qitish orqali tibbiyot oliygohlariga kirishingizga yordam beramiz.",
   },

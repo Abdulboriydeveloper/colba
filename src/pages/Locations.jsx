@@ -17,7 +17,7 @@ export default function Locations() {
       <section className="page-hero locations-hero">
         <div className="page-hero-bg" />
         <div className="container page-hero-content">
-          <span className="page-eyebrow">Manzillar</span>
+          {/* <span className="page-eyebrow">Manzillar</span> */}
           <h1>BIZNING MANZILLARIMIZ</h1>
           <p>Filiallarimiz Dushanbadan–Shanbagacha, soat 09:00 dan 17:00 gacha ishlaydi</p>
         </div>

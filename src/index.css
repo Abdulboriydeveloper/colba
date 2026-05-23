@@ -131,23 +131,23 @@ button { cursor: pointer; border: none; font-family: var(--font-body); }
 }
 
 .btn-orange {
-  background: linear-gradient(135deg, var(--orange), var(--orange-light));
-  color: var(--white);
-  padding: 14px 32px;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1rem;
-  font-family: var(--font-display);
-  transition: var(--transition);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 8px 24px rgba(247,127,0,0.35);
+    background: linear-gradient(135deg, #00c5f7, #18a4e4);
+    color: var(--white);
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: var(--font-display);
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 8px 24px rgb(0 186 247 / 35%);
 }
 
 .btn-orange:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(247,127,0,0.5);
+  box-shadow: 0 12px 32px rgba(24, 173, 226, 0.5);
 }
 
 /* Animations */
