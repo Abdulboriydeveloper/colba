@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import './Footer.css'
+import logo from '../assets/images/logo-oq.png';
 
 export default function Footer() {
   return (
@@ -9,24 +10,13 @@ export default function Footer() {
           <div className="footer-brand">
             <Link to="/" className="footer-logo">
               <div className="footer-logo-icon">
-                <svg width="40" height="40" viewBox="0 0 36 36" fill="none">
-                  <rect width="36" height="36" rx="10" fill="url(#flg)"/>
-                  <path d="M10 24 L18 10 L26 24 M13 20 H23" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <defs>
-                    <linearGradient id="flg" x1="0" y1="0" x2="36" y2="36">
-                      <stop stopColor="#48cae4"/>
-                      <stop offset="1" stopColor="#0077b6"/>
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
-              <div>
-                <div className="footer-brand-name">COLBA</div>
-                <div className="footer-brand-sub">Ta'lim Markazi</div>
+                <div className="logo-icon">
+                  <img src={logo} />
+                </div>
               </div>
             </Link>
             <p className="footer-desc">
-              Kimyo va biologiyaga ixtisoslashgan O'zbekistondagi eng yirik o'quv markaz. 2013-yildan buyon yoshlarni kelajakka tayyorlamoqdamiz.
+              Tibbiyotga ixtisoslashgan O'zbekistondagi eng yirik o'quv markaz. 16 yillik tajriba bilan yoshlarni oliygohlarga tayyorlaymiz.
             </p>
             <div className="footer-socials">
               <a href="#" className="social-icon" aria-label="YouTube">
@@ -64,18 +54,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="footer-links-group">
-            <h4>Kurslar</h4>
-            <ul>
-              <li><a href="#">Kimyo kursi</a></li>
-              <li><a href="#">Biologiya kursi</a></li>
-              <li><a href="#">DTM tayyorlov</a></li>
-              <li><a href="#">Online darslar</a></li>
-              <li><a href="#">Individual darslar</a></li>
-              <li><a href="#">Mock imtihonlar</a></li>
-            </ul>
-          </div>
-
           <div className="footer-contact">
             <h4>Biz bilan bog'laning</h4>
             <a href="tel:+998781137818" className="footer-phone">
@@ -89,7 +67,7 @@ export default function Footer() {
                 <circle cx="12" cy="12" r="10"/>
                 <path d="M12 6v6l4 2"/>
               </svg>
-              Du–Sha: 07:30 – 20:00
+              Du–Sha: 09:00 – 17:00
             </p>
             <Link to="/" className="btn-primary footer-cta">
               Ariza qoldirish

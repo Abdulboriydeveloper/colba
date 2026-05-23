@@ -5,7 +5,7 @@ import './FAQ.css'
 const faqs = [
   {
     q: "Individual darslar va guruhli darslar qaysi vaqtlarda bo'ladi?",
-    a: "Guruhli darslar hafta davomida har kuni soat 07:30 dan 20:00 gacha turli vaqtlarda bo'lib o'tadi. Individual darslar esa o'quvchi va ustoz kelishuviga ko'ra belgilanadi. Qulay dars vaqtini tanlash uchun administrator bilan bog'laning."
+    a: "Guruhli darslar hafta davomida soat 09:00 dan 17:00 gacha turli vaqtlarda bo'lib o'tadi. Individual darslar esa o'quvchi va ustoz kelishuviga ko'ra belgilanadi. Qulay dars vaqtini tanlash uchun administrator bilan bog'laning."
   },
   {
     q: "Qaysi filialda eng yaxshi ustoz bor?",

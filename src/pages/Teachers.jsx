@@ -30,7 +30,7 @@ export default function Teachers() {
       <section className="page-hero teachers-hero">
         <div className="page-hero-bg" />
         <div className="container page-hero-content">
-          <span className="page-eyebrow">Ustozlar</span>
+          {/* <span className="page-eyebrow">Ustozlar</span> */}
           <h1>USTOZLARIMIZ</h1>
           <p>Kimyo va biologiya fanlari bo'yicha eng tajribali va malakali mutaxassislar jamoasi</p>
         </div>

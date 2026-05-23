@@ -158,53 +158,6 @@
 .highlight-item span { font-size: 1.2rem; }
 .highlight-item p { font-size: 0.875rem; font-weight: 600; color: var(--dark); margin: 0; }
 
-/* ─── ABOUT STATS ─────────────────────────────── */
-.about-stats-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1px;
-  background: rgba(255,255,255,0.06);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
-
-.about-stat {
-  padding: 40px 20px;
-  text-align: center;
-  background: var(--dark);
-  position: relative;
-}
-
-.about-stat::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 3px;
-  background: var(--cyan);
-  border-radius: 2px;
-  opacity: 0;
-  transition: var(--transition);
-}
-
-.about-stat:hover::after { opacity: 1; }
-
-.about-stat-num {
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  font-weight: 900;
-  color: var(--cyan-light);
-  margin-bottom: 8px;
-}
-
-.about-stat-label {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.45);
-  font-weight: 500;
-}
-
 /* ─── TIMELINE ─────────────────────────────── */
 .timeline {
   position: relative;
@@ -323,13 +276,11 @@
 
 /* ─── RESPONSIVE ─────────────────────────────── */
 @media (max-width: 1024px) {
-  .about-stats-grid { grid-template-columns: repeat(3, 1fr); }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
   .about-intro { grid-template-columns: 1fr; gap: 32px; }
-  .about-stats-grid { grid-template-columns: repeat(2, 1fr); }
   .timeline-item, .timeline-item.right { padding: 0 0 0 48px; justify-content: flex-start; }
   .timeline-line { left: 16px; }
   .timeline-dot { left: 16px; }
@@ -337,5 +288,38 @@
 
 @media (max-width: 480px) {
   .team-grid { grid-template-columns: 1fr 1fr; }
-  .about-stats-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ─── SIMPLIFIED ABOUT ─────────────────────────────── */
+.about-simple-hero {
+  padding: 130px 0 34px;
+  background: white;
+}
+
+.about-simple-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  color: var(--dark);
+  text-align: center;
+}
+
+.about-main-section {
+  padding-top: 40px;
+}
+
+.about-student-photo {
+  min-height: 260px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #133848, #0ab0d6);
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+  font-weight: 800;
+  margin-bottom: 26px;
+  box-shadow: var(--shadow-md);
+}
+
+.about-text p {
+  font-size: 1.12rem;
+  color: var(--gray-700);
 }

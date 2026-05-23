@@ -1,7 +1,13 @@
 import { useState } from 'react'
 import './ContactForm.css'
 
-export default function ContactForm({ dark = false }) {
+export default function ContactForm({
+  dark = false,
+  title = 'Savollaringiz qoldimi?',
+  highlight = "Biz bilan bog'laning!",
+  description = "Mutaxassislarimiz sizga qulay vaqtda qo'ng'iroq qilishadi",
+  buttonText = 'Ariza qoldirish',
+}) {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [submitted, setSubmitted] = useState(false)
@@ -18,8 +24,8 @@ export default function ContactForm({ dark = false }) {
       <div className="container">
         <div className="contact-card">
           <div className="contact-left">
-            <h2>Savollaringiz qoldimi?<br /><span>Biz bilan bog'laning!</span></h2>
-            <p>Mutaxassislarimiz sizga qulay vaqtda qo'ng'iroq qilishadi</p>
+            <h2>{title}<br /><span>{highlight}</span></h2>
+            <p>{description}</p>
           </div>
 
           {submitted ? (
@@ -47,7 +53,7 @@ export default function ContactForm({ dark = false }) {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="M12 5v14M5 12l7 7 7-7"/>
                 </svg>
-                Ariza qoldirish
+                {buttonText}
               </button>
             </div>
           )}

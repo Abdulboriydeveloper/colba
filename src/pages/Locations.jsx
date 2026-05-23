@@ -3,19 +3,8 @@ import ContactForm from '../components/ContactForm'
 import './Locations.css'
 
 const branches = [
-  { id: 1, name: 'OYBEK', address: '16 Afrosiyob kochasi', landmark: "sobiq \"Angel's Food\" (OYBEK metro bekati)", metro: 'Oybek', phone: '+998 78 113 78 18', hours: '07:30 – 20:00' },
-  { id: 2, name: "XALQLAR DO'STLIGI", address: '8/1 Islom Karimov kochasi', landmark: "XALQLAR DOSTLIGI metro bekati, sobiq 'UzBowling'", metro: "Xalqlar dostligi", phone: '+998 78 113 78 18', hours: '07:30 – 20:00' },
-  { id: 3, name: 'C1', address: '1 Shakhrisabz St., C1', landmark: 'sobiq "Detsky Mir"', metro: 'Amir Temur Hiyoboni', phone: '+998 78 113 78 18', hours: '07:30 – 20:00' },
-  { id: 4, name: 'WESTMINSTER', address: "14 Istiqlol kochasi", landmark: "Westminster universiteti, O'zbekneftegaz", metro: 'Mustaqillik maydoni', phone: '+998 78 113 78 18', hours: '07:30 – 20:00' },
-  { id: 5, name: 'YUNUSOBOD', address: "18 Amir Temur kochasi", landmark: 'Yunusobod tumanida, 11-mavzey', metro: 'Mirobod', phone: '+998 78 113 78 18', hours: '07:30 – 20:00' },
-  { id: 6, name: 'CHILONZOR', address: "Hamid Olimjon kochasi 3", landmark: 'Chilonzor bozori yaqinida', metro: 'Chilonzor', phone: '+998 78 113 78 18', hours: '07:30 – 20:00' },
-  { id: 7, name: 'SERGELI', address: "Kichik Halqa yo'li 1", landmark: 'Sergeli tumani markazida', metro: 'Sergeli', phone: '+998 78 113 78 18', hours: '07:30 – 20:00' },
-  { id: 8, name: 'SHAYXONTOHUR', address: "Kokcha kochasi 14", landmark: 'Shayxontohur tumani, eski shahar', metro: 'Ming orik', phone: '+998 78 113 78 18', hours: '07:30 – 20:00' },
-  { id: 9, name: 'YAKKASAROY', address: "Yangi qorgon kochasi 7", landmark: 'Yakkasaroy tumani', metro: 'Paxtakor', phone: '+998 78 113 78 18', hours: '07:30 – 20:00' },
-  { id: 10, name: 'MIRZO ULUGBEK', address: "Mirzo Ulugbek kochasi 55", landmark: "Mirzo Ulug'bek tumani", metro: "Mirzo Ulug'bek", phone: '+998 78 113 78 18', hours: '07:30 – 20:00' },
-  { id: 11, name: 'BEKTEMIR', address: "Sanoat kochasi 2", landmark: 'Bektemir tumani', metro: 'Buyuk ipak yoli', phone: '+998 78 113 78 18', hours: '07:30 – 20:00' },
-  { id: 12, name: 'OLMAZAR', address: "Farrux kochasi 22", landmark: 'Olmazar bozori yaqinida', metro: 'Dustlik', phone: '+998 78 113 78 18', hours: '07:30 – 20:00' },
-  { id: 13, name: 'YASHNOBOD', address: "Yashnobod kochasi 10", landmark: 'Yashnobod tumani', metro: 'Yashnobod', phone: '+998 78 113 78 18', hours: '07:30 – 20:00' },
+  { id: 1, name: 'OYBEK', address: '16 Afrosiyob kochasi', landmark: "sobiq \"Angel's Food\" (OYBEK metro bekati)", metro: 'Oybek', phone: '+998 78 113 78 18', hours: '09:00 – 17:00' },
+  { id: 2, name: "XALQLAR DO'STLIGI", address: '8/1 Islom Karimov kochasi', landmark: "XALQLAR DOSTLIGI metro bekati, sobiq 'UzBowling'", metro: "Xalqlar dostligi", phone: '+998 78 113 78 18', hours: '09:00 – 17:00' },
 ]
 
 const MAP_IFRAME = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d191952.60774044432!2d69.07693!3d41.29950!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5a9323b4aa5cb98!2sTashkent%2C%20Uzbekistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s`
@@ -30,7 +19,7 @@ export default function Locations() {
         <div className="container page-hero-content">
           <span className="page-eyebrow">Manzillar</span>
           <h1>BIZNING MANZILLARIMIZ</h1>
-          <p>Filiallarimiz Dushanbadan–Shanbagacha, soat 7:30 dan 20:00 gacha ishlaydi</p>
+          <p>Filiallarimiz Dushanbadan–Shanbagacha, soat 09:00 dan 17:00 gacha ishlaydi</p>
         </div>
       </section>
 
@@ -40,13 +29,13 @@ export default function Locations() {
           <div className="loc-band-items">
             <div className="loc-band-item">
               <span className="loc-band-icon">🏢</span>
-              <strong>13</strong>
+              <strong>2</strong>
               <span>Filiallar</span>
             </div>
             <div className="loc-band-div" />
             <div className="loc-band-item">
               <span className="loc-band-icon">🕐</span>
-              <strong>07:30 – 20:00</strong>
+              <strong>09:00 – 17:00</strong>
               <span>Ish vaqti</span>
             </div>
             <div className="loc-band-div" />
@@ -83,7 +72,7 @@ export default function Locations() {
                   referrerPolicy="no-referrer-when-downgrade"
                 />
                 <div className="map-overlay-badge">
-                  <span>📍</span> Toshkent shahrida 13 filial
+                  <span>📍</span> Toshkent shahrida 2 filial
                 </div>
               </div>
             </div>

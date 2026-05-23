@@ -1,40 +1,49 @@
 import { Link } from 'react-router-dom'
 import ContactForm from '../components/ContactForm'
+import ResultsSlider from '../components/ResultsSlider'
+import StatsCards from '../components/StatsCards'
 import './Home.css'
 
 const stats = [
   { icon: '🏢', num: '2', label: 'Filiallar' },
-  { icon: '👥', num: '600+', label: 'Xodimlar' },
-  { icon: '📅', num: '16 yil', sub: 'since 2010', label: 'Faoliyat davri' },
+  { icon: '👥', num: '50+', label: 'Xodimlar' },
+  { icon: '📅', num: '16 yil', label: 'Faoliyat davri' },
   { icon: '🎓', num: '12 000+', label: "O'quvchilar" },
-  { icon: '🏆', num: '200 000+', label: 'Bitiruvchilar' },
+  { icon: '🏆', num: '200+', label: 'Bitiruvchilar' },
 ]
 
 const features = [
   {
+    icon: '🎯',
+    color: '#00b4d8',
+    title: '100% natija',
+    desc: "Colba ta'lim dasturini to'liq yakunlagan o'quvchilar tibbiyot oliygohlariga muddatidan oldin kirishadi.",
+  },
+  {
+    icon: '📝',
+    color: '#2ec4b6',
+    title: 'Har kunlik imtihon',
+    desc: "O'quvchining mavzu o'zlashtirayotganini doimiy nazorat qilib borish uchun har kunlik imtihon tizimi joriy qilingan.",
+  },
+  {
     icon: '📚',
     color: '#f77f00',
-    title: "Bepul ikkinchi o'qituvchi",
-    desc: "Mavzuni yaxshi o'zlashtirolmagan bo'lsangiz, yordamchi o'qituvchilar har doim yoningizda va istagan mavzuyingizni qayta tushuntirib berishadi.",
+    title: 'Har kunlik darslar',
+    desc: "Haftasiga 5 kun, 4-5 soatdan o'qitish orqali tibbiyot oliygohlariga kirishingizga yordam beramiz.",
   },
-  {
-    icon: '✅',
-    color: '#2ec4b6',
-    title: 'Test Markazi',
-    desc: "Alohida test markazimiz mavjud u yerda siz, ham MOCK imtihonlarini ham haqiqiy imtihonni topshirishingiz mumkin.",
-  },
-  {
-    icon: '🏆',
-    color: '#e63946',
-    title: 'Bepul Tadbirlar',
-    desc: "Olimpiada, seminar, taniqli olimlar bilan suhbat va unutmas sayohatlar, bularning barchasi Colba o'quvchilari uchun mutlaqo bepul.",
-  },
-  {
-    icon: '☕',
-    color: '#457b9d',
-    title: 'Co-working zonalar',
-    desc: "Har bir filialimizda o'quvchilarimiz uchun maxsus co-working zonalar mavjud bo'lib, darslardan ozod vaqtingizda o'qishingiz mumkin.",
-  },
+]
+
+const previewResults = [
+  { subject: 'Kimyo', score: '96/100', name: 'Azizbek T.', year: '2024', image: '/results/result-1.jpg' },
+  { subject: 'Biologiya', score: '98/100', name: 'Malika R.', year: '2024', image: '/results/result-2.jpg' },
+  { subject: 'DTM', score: '189.2', name: "Jasur O'.", year: '2024', image: '/results/result-3.jpg' },
+  { subject: 'Kimyo', score: '97/100', name: 'Nodira S.', year: '2024', image: '/results/result-4.jpg' },
+  { subject: 'Biologiya', score: '95/100', name: 'Bobur K.', year: '2024', image: '/results/result-5.jpg' },
+  { subject: 'DTM', score: '191.5', name: 'Zulfiya M.', year: '2024', image: '/results/result-6.jpg' },
+  { subject: 'Kimyo', score: '95/100', name: 'Sherzod A.', year: '2023', image: '/results/result-7.jpg' },
+  { subject: 'Biologiya', score: '96/100', name: 'Dilnoza Y.', year: '2023', image: '/results/result-8.jpg' },
+  { subject: 'DTM', score: '188.6', name: 'Madina S.', year: '2023', image: '/results/result-9.jpg' },
+  { subject: 'Kimyo', score: '94/100', name: 'Ibrohim N.', year: '2023', image: '/results/result-10.jpg' },
 ]
 
 function BuildingIllustration() {
@@ -166,15 +175,17 @@ export default function Home() {
                 <strong>16 yil ichida</strong> Colba <strong>12 000 dan ortiq</strong> yoshlarga ta'lim va tarbiya berdi!
               </p>
 
-              <p className="hero-cta-label">3 kunlik bepul darslarga yoziling</p>
-
-              <div className="hero-actions">
-                <Link to="/about" className="btn-primary">
-                  Ariza qoldirish
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </Link>
+              <div className="hero-cta-row">
+                <p className="hero-cta-label">3 kunlik BEPUL darsga yoziling</p>
+                <span className="hero-cta-arrow" aria-hidden="true">→</span>
+                <div className="hero-actions">
+                  <Link to="/about" className="btn-primary">
+                    Ariza qoldirish
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </Link>
+                </div>
               </div>
 
               <div className="hero-stats-row">
@@ -234,30 +245,20 @@ export default function Home() {
       {/* STATS */}
       <section className="stats-section section-gray section">
         <div className="container">
-          <p className="stats-eyebrow">Raqamlarda</p>
-          <h2 className="section-title">BIZ HAQIMIZDA</h2>
-          <div className="stats-grid">
-            {stats.map((s, i) => (
-              <div className="stat-card" key={i} style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className="stat-icon">{s.icon}</div>
-                <div className="stat-num">{s.num}</div>
-                {s.sub && <div className="stat-sub">{s.sub}</div>}
-                <div className="stat-label">{s.label}</div>
-                <div className="stat-deco" />
-              </div>
-            ))}
-          </div>
+          {/* <p className="stats-eyebrow">Raqamlarda</p> */}
+          <h2 className="section-title">Colba markazi raqamlarda</h2>
+          <StatsCards stats={stats} />
         </div>
       </section>
 
       {/* FEATURES */}
       <section className="features-section section section-dark">
         <div className="container">
-          <p className="section-eyebrow-light">Nega aynan biz?</p>
-          <h2 className="section-title" style={{ color: 'white' }}>Nega yoshlar bizni tanlashmoqda?</h2>
-          <p className="section-subtitle" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          {/* <p className="section-eyebrow-light">Nega aynan biz?</p> */}
+          <h2 className="section-title" style={{ color: 'white' }}>Nega yoshlar aynan Colbani tanlashmoqda??</h2>
+          {/* <p className="section-subtitle" style={{ color: 'rgba(255,255,255,0.5)' }}>
             2010-yildan buyon yoshlarga sifatli ta'lim berib kelmoqdamiz va hozirga kelib 2 ta filialga egamiz
-          </p>
+          </p> */}
 
           <div className="features-grid">
             {features.map((f, i) => (
@@ -285,26 +286,11 @@ export default function Home() {
       {/* QUICK RESULTS */}
       <section className="results-preview section">
         <div className="container">
-          <p className="stats-eyebrow">Muvaffaqiyat</p>
-          <h2 className="section-title">BIZNING NATIJALARIMIZ!</h2>
+          <h2 className="section-title">Bizning qahramonlarimiz!</h2>
           <p className="section-subtitle">
-            O'quvchilarimiz doimiy ravishda yuqori natijalarga erishib o'z kelajaklarini qurishadi
+            Bitiruvchilarimiz natijalari bilan tanishing, keyingisi siz bo'lishingiz mumkin
           </p>
-          <div className="results-cards">
-            {[
-              { subject: 'Kimyo', score: '96/100', name: 'Azizbek T.', year: '2024' },
-              { subject: 'Biologiya', score: '98/100', name: 'Malika R.', year: '2024' },
-              { subject: 'DTM', score: '189.2', name: "Jasur O'.", year: '2024' },
-              { subject: 'Kimyo', score: '97/100', name: 'Nodira S.', year: '2024' },
-            ].map((r, i) => (
-              <div className="result-card" key={i}>
-                <div className="result-badge">{r.subject}</div>
-                <div className="result-score">{r.score}</div>
-                <div className="result-name">{r.name}</div>
-                <div className="result-year">{r.year}</div>
-              </div>
-            ))}
-          </div>
+          <ResultsSlider results={previewResults} />
           <div style={{ textAlign: 'center', marginTop: 40 }}>
             <Link to="/results" className="btn-primary">Barcha natijalarni ko'rish</Link>
           </div>
