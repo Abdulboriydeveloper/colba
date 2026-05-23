@@ -1,0 +1,236 @@
+.adv-hero {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+.adv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.adv-card {
+  background: var(--dark-card);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  border: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  cursor: default;
+}
+
+.adv-card.adv-card-wide {
+  grid-column: span 1;
+}
+
+.adv-card:hover {
+  border-color: rgba(255,255,255,0.15);
+  transform: translateY(-4px);
+}
+
+.adv-card:hover .adv-glow {
+  opacity: 0.15;
+  transform: scale(1.3);
+}
+
+.adv-glow {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  bottom: -40px;
+  right: -40px;
+  opacity: 0;
+  filter: blur(40px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.adv-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.adv-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.adv-icon { font-size: 1.6rem; }
+
+.adv-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.adv-card p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+}
+
+/* ─── COMPARE TABLE ─────────────────────────────── */
+.compare-table-wrap {
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.compare-table thead tr {
+  background: var(--dark);
+}
+
+.compare-table th {
+  padding: 20px 24px;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+}
+
+.compare-table th:first-child { text-align: left; }
+
+.colba-col {
+  background: rgba(0,180,216,0.12) !important;
+}
+
+.colba-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--cyan-light) !important;
+}
+
+.compare-table tbody tr {
+  border-bottom: 1px solid var(--gray-100);
+  transition: background 0.2s;
+}
+
+.compare-table tbody tr:hover { background: var(--gray-50); }
+.compare-table tbody tr:last-child { border-bottom: none; }
+
+.compare-table td {
+  padding: 16px 24px;
+  font-size: 0.9rem;
+  color: var(--gray-700);
+  text-align: center;
+}
+
+.compare-table td:first-child { text-align: left; font-weight: 500; }
+
+.compare-check {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0 auto;
+}
+
+.compare-check.yes {
+  background: rgba(46,196,182,0.15);
+  color: var(--green);
+}
+
+.compare-check.no {
+  background: rgba(230,57,70,0.1);
+  color: #e63946;
+}
+
+@media (max-width: 900px) {
+  .adv-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .adv-grid { grid-template-columns: 1fr; }
+}
+
+/* ─── DOC EDITS ─────────────────────────────── */
+.advantages-simple-hero {
+  padding: 130px 0 46px;
+  background: var(--gray-50);
+}
+
+.advantages-simple-hero h1 {
+  text-align: center;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  color: var(--dark);
+}
+
+.advantages-main {
+  background: var(--gray-50);
+  padding-top: 32px;
+}
+
+.advantages-main .adv-card {
+  background: white;
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-sm);
+  border-radius: 18px;
+}
+
+.advantages-main .adv-card:hover {
+  border-color: var(--adv-color);
+  box-shadow: var(--shadow-md);
+}
+
+.advantages-main .adv-card h3 {
+  color: var(--dark);
+}
+
+.advantages-main .adv-card p {
+  color: var(--gray-500);
+}
+
+.advantages-cta {
+  background: linear-gradient(135deg, #0d3b51, #00a6d6);
+  color: white;
+}
+
+.adv-cta-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+.adv-cta-inner h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: 10px;
+}
+
+.adv-cta-inner p {
+  color: rgba(255,255,255,0.75);
+  max-width: 620px;
+}
+
+@media (max-width: 768px) {
+  .adv-cta-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
