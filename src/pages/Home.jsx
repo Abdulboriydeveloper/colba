@@ -255,7 +255,7 @@ export default function Home() {
       <section className="features-section section section-dark">
         <div className="container">
           {/* <p className="section-eyebrow-light">Nega aynan biz?</p> */}
-          <h2 className="section-title" style={{ color: 'white' }}>Nega yoshlar aynan Colbani tanlashmoqda??</h2>
+          <h2 className="section-title" style={{ color: 'white' }}>Nega yoshlar aynan Colbani tanlashmoqda?</h2>
           {/* <p className="section-subtitle" style={{ color: 'rgba(255,255,255,0.5)' }}>
             2010-yildan buyon yoshlarga sifatli ta'lim berib kelmoqdamiz va hozirga kelib 2 ta filialga egamiz
           </p> */}
@@ -286,7 +286,7 @@ export default function Home() {
       {/* QUICK RESULTS */}
       <section className="results-preview section">
         <div className="container">
-          <h2 className="section-title">Bizning qahramonlarimiz!</h2>
+          <h2 className="section-title section-title-results">Bizning qahramonlarimiz!</h2>
           <p className="section-subtitle">
             Bitiruvchilarimiz natijalari bilan tanishing, keyingisi siz bo'lishingiz mumkin
           </p>

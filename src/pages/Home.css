@@ -367,6 +367,9 @@
 .section-title {
   margin-bottom: 40px;
 }
+.section-title-results{
+  margin-bottom: 0px;
+}
 
 .stats-eyebrow { color: var(--cyan-dark); }
 .section-eyebrow-light { color: var(--cyan-light); }

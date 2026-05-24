@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Advantages from './pages/Advantages'
 import Teachers from './pages/Teachers'
+import System from './pages/System'
 import Results from './pages/Results'
 import Locations from './pages/Locations'
 import FAQ from './pages/FAQ'
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/advantages" element={<Advantages />} />
         <Route path="/teachers" element={<Teachers />} />
+        <Route path="/system" element={<System />} />
         <Route path="/results" element={<Results />} />
         <Route path="/locations" element={<Locations />} />
         <Route path="/faq" element={<FAQ />} />

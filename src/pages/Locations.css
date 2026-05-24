@@ -184,15 +184,29 @@
   justify-content: center;
   transition: var(--transition);
   border: 1px solid var(--gray-200);
+  text-decoration: none;
 }
 
-.map-action-btn:hover {
+/* Yandex – orange on hover */
+.map-action-btn.yandex-btn:hover {
+  background: #ff6600;
+  color: white;
+  border-color: #ff6600;
+}
+
+/* Google Maps – red on hover */
+.map-action-btn.maps-btn:hover {
+  background: #e03131;
+  color: white;
+  border-color: #e03131;
+}
+
+/* Street view / eye – cyan on hover */
+.map-action-btn.street-btn:hover {
   background: var(--cyan-dark);
   color: white;
   border-color: var(--cyan-dark);
 }
-
-.maps-btn:hover { background: #e03131; border-color: #e03131; }
 
 @media (max-width: 1024px) {
   .locations-layout { grid-template-columns: 1fr; }

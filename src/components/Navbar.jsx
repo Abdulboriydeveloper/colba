@@ -18,8 +18,8 @@ export default function Navbar() {
     { to: '/advantages', label: 'Afzalliklar' },
     { to: '/results', label: 'Natijalar' },
     { to: '/teachers', label: "Ustozlar" },
-    { to: '/locations', label: 'Filiallar' },
     { to: '/system', label: "O'quv tizimi" },
+    { to: '/locations', label: 'Filiallar' },
     { to: '/faq', label: 'FAQ' },
   ]
 

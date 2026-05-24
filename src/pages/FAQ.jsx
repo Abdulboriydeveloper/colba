@@ -4,53 +4,33 @@ import './FAQ.css'
 
 const faqs = [
   {
-    q: "Individual darslar va guruhli darslar qaysi vaqtlarda bo'ladi?",
-    a: "Guruhli darslar hafta davomida soat 09:00 dan 17:00 gacha turli vaqtlarda bo'lib o'tadi. Individual darslar esa o'quvchi va ustoz kelishuviga ko'ra belgilanadi. Qulay dars vaqtini tanlash uchun administrator bilan bog'laning."
+    q: "Nechanchi sinfdan qabul qilinadi?",
+    a: "7-sinfdan 10-sinfgacha o’quvchilar qabul qilinadi. Agar 11-sinf boshi bo’lsa ham qabul qilinadi."
   },
   {
-    q: "Qaysi filialda eng yaxshi ustoz bor?",
-    a: "Barcha filiallarimizda CELTA, PhD va yuksak malakali ustozlar ishlaydi. Har bir filialda 97/100 va undan yuqori natijalarga erishgan mutaxassislar mavjud. Biz ustozlarni barcha filiallarga teng darajada taqsimlaymiz."
+    q: "Rus tilidagi ham guruhlar mavjudmi?",
+    a: "Afsuski, rus tilidagi guruhlarimiz mavjud emas. Colba markazida faqat o’zbek tilidagi guruhlar mavjud."
   },
   {
-    q: "Yoshga oid chegaralar mavjudmi?",
-    a: "Yo'q, Colbada yoshga oid cheklovlar yo'q. Biz 8 yoshdan tortib katta yoshdagi o'quvchilargacha barcha toifadagi insonlarni qabul qilamiz. Har bir guruh yosh va daraja bo'yicha tashkil etiladi."
+    q: "Darslar qaysi vaqtlarda bo’ladi?",
+    a: "Darslarimiz haftasiga 5 kun ya’ni dushanbadan jumagacha, soat 14:00 dan 18:00 gacha o‘tkaziladi."
   },
   {
-    q: "O'zim xohlagan darajada o'qishni boshlashim uchun nima qilishim kerak?",
-    a: "Avvalo, biz bilan bog'laning yoki bizimizdagi bepul boshlang'ich test orqali darajangizni aniqlaymiz. So'ngra sizning darajangizga mos guruh yoki individual dars dasturini tavsiya etamiz."
+    q: "Colba markazida o‘qishni boshlasam, kitob va daftar sotib olishim kerakmi?",
+    a: "Colba markazida har bir o‘quvchiga kitob va daftar bepul taqdim etiladi."
   },
   {
-    q: "Kurs narxlari qancha va to'lov qanday amalga oshiriladi?",
-    a: "Kurs narxlari tanlangan fan, dars shakli (guruhli yoki individual) va dars soatlari soniga qarab farqlanadi. To'lovni naqd, karta yoki bank o'tkazma orqali amalga oshirish mumkin. Batafsil ma'lumot uchun qo'ng'iroq qiling."
-  },
-  {
-    q: "Bepul sinov darslariga qanday yozilish mumkin?",
-    a: "Saytimizda 'Ariza qoldirish' tugmasini bosing yoki +998 78 113 78 18 raqamiga qo'ng'iroq qiling. 3 kunlik bepul sinov darslariga yozilish to'liq bepul va hech qanday majburiyat talab qilmaydi."
-  },
-  {
-    q: "DTMga tayyorlanish kursi qancha vaqt davom etadi?",
-    a: "DTM tayyorlov kursi odatda 8–12 oy davom etadi. Bu vaqt ichida kimyo, biologiya, matematika va ona tili fanlaridan intensiv tayyorgarlik ko'rasiz. Shuningdek, 2–4 oylik tezlashtirilgan kurslar ham mavjud."
-  },
-  {
-    q: "Online darslar mavjudmi?",
-    a: "Ha, Colbada onlayn darslar ham mavjud. Zoom va bizning maxsus onlayn platformamiz orqali sifatli ta'lim olishingiz mumkin. Onlayn format jismoniy darslar bilan bir xil o'quv dasturini qamrab oladi."
-  },
-  {
-    q: "Laboratoriya mashg'ulotlari bormi?",
-    a: "Ha, barcha yirik filiallarimizda zamonaviy kimyo va biologiya laboratoriyalari mavjud. Amaliy tajribalar va eksperimentlar orqali nazariy bilimlarni mustahkamlaysiz."
-  },
-  {
-    q: "Ota-onalar o'z farzandlarining o'qish jarayonini kuzata oladimi?",
-    a: "Albatta. Bizning online platformamiz orqali ota-onalar farzandlarining davomat, baholari va o'quv jarayonini real vaqtda kuzata olishlari mumkin. Bundan tashqari, oy oxirida maxsus ota-onalar yig'ilishlari o'tkaziladi."
-  },
+    q: "Milliy sertifikat olishim uchun qancha vaqt o’qishim kerak?",
+    a: "Colba markazining ta’lim dasturi 1,5-2 yilga mo’ljallangan. Dasturni tugatsangiz yuqori natijaga chiqishingizni kafolatlaymiz."
+  }
 ]
 
-const categories = [
-  { label: 'Barcha savollar', count: faqs.length },
-  { label: "Ta'lim jarayoni", count: 4 },
-  { label: "To'lov va narxlar", count: 2 },
-  { label: 'Darslar', count: 4 },
-]
+// const categories = [
+//   { label: 'Barcha savollar', count: faqs.length },
+//   { label: "Ta'lim jarayoni", count: 4 },
+//   { label: "To'lov va narxlar", count: 2 },
+//   { label: 'Darslar', count: 4 },
+// ]
 
 export default function FAQ() {
   const [open, setOpen] = useState(null)
@@ -87,13 +67,13 @@ export default function FAQ() {
         <div className="container faq-layout">
           {/* Sidebar */}
           <aside className="faq-sidebar">
-            <h3>Kategoriyalar</h3>
+            {/* <h3>Kategoriyalar</h3>
             {categories.map((c, i) => (
               <button key={i} className={`faq-cat-btn ${i === 0 ? 'active' : ''}`}>
                 <span>{c.label}</span>
                 <span className="faq-cat-count">{c.count}</span>
               </button>
-            ))}
+            ))} */}
             <div className="faq-contact-card">
               <div className="faq-contact-icon">💬</div>
               <h4>Javob topolmadingizmi?</h4>

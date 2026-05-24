@@ -1,25 +1,117 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import ContactForm from '../components/ContactForm'
 import './Locations.css'
 
+// ✅ Koordinatalarni shu yerga kiriting: [latitude, longitude]
 const branches = [
-  { id: 1, name: 'OYBEK', address: '16 Afrosiyob kochasi', landmark: "sobiq \"Angel's Food\" (OYBEK metro bekati)", metro: 'Oybek', phone: '+998 78 113 78 18', hours: '09:00 – 17:00' },
-  { id: 2, name: "XALQLAR DO'STLIGI", address: '8/1 Islom Karimov kochasi', landmark: "XALQLAR DOSTLIGI metro bekati, sobiq 'UzBowling'", metro: "Xalqlar dostligi", phone: '+998 78 113 78 18', hours: '09:00 – 17:00' },
+  {
+    id: 1,
+    name: 'TINCHLIK',
+    address: "Bog' ko'chasining 2-tor ko'chasi, 1/3",
+    landmark: "Tinchlik metro bekati yonida",
+    district: 'Shayxontohur tumani',
+    coords: [41.3202, 69.2631], // 👈 [latitude, longitude]
+  },
+  {
+    id: 2,
+    name: 'NURAFSHON',
+    address: "Tinchlik metro bekatidan 600 metr",
+    landmark: "Tinchlik metro bekati yaqinida",
+    district: 'Shayxontohur tumani',
+    coords: [41.3150, 69.2580], // 👈 [latitude, longitude]
+  },
+  {
+    id: 3,
+    name: "SIRGʻALI",
+    address: "O'zgarish mahalla fuqarolar yig'ini",
+    landmark: "O'zgarish metro bekati",
+    district: "Sirg'ali tumani",
+    coords: [41.2480, 69.1720], // 👈 [latitude, longitude]
+  },
 ]
 
-const MAP_IFRAME = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d191952.60774044432!2d69.07693!3d41.29950!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5a9323b4aa5cb98!2sTashkent%2C%20Uzbekistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s`
+// 👇 Yandex Maps API kalitingizni shu yerga kiriting (https://developer.tech.yandex.ru/)
+const YANDEX_API_KEY = 'YOUR_API_KEY'
+
+function yandexLink(b) {
+  return `https://yandex.uz/maps/?pt=${b.coords[1]},${b.coords[0]},pm2ym&z=16&l=map`
+}
+function googleLink(b) {
+  return `https://maps.google.com/?q=${b.coords[0]},${b.coords[1]}`
+}
 
 export default function Locations() {
   const [active, setActive] = useState(0)
+  const mapRef = useRef(null)       // DOM element
+  const ymapRef = useRef(null)      // ymaps.Map instance
+  const markersRef = useRef([])
+
+  /* ---------- Yandex Maps JS API ni yuklash ---------- */
+  useEffect(() => {
+    function initMap() {
+      const ymaps = window.ymaps
+      ymaps.ready(() => {
+        if (ymapRef.current) return   // already initialized
+
+        ymapRef.current = new ymaps.Map(mapRef.current, {
+          center: branches[0].coords,
+          zoom: 12,
+          controls: ['zoomControl', 'fullscreenControl'],
+        })
+
+        branches.forEach(b => {
+          const placemark = new ymaps.Placemark(
+            b.coords,
+            {
+              balloonContentHeader: `<strong>${b.name}</strong>`,
+              balloonContentBody: `${b.district}<br/><small>${b.landmark}</small>`,
+            },
+            {
+              preset: 'islands#yellowDotIcon',   // sariq pin — birinchi rasmdagidek
+              iconColor: '#f5a623',
+            }
+          )
+          markersRef.current.push(placemark)
+          ymapRef.current.geoObjects.add(placemark)
+        })
+      })
+    }
+
+    if (window.ymaps) {
+      initMap()
+      return
+    }
+
+    const script = document.createElement('script')
+    const apiKey = YANDEX_API_KEY !== 'YOUR_API_KEY' ? `&apikey=${YANDEX_API_KEY}` : ''
+    script.src = `https://api-maps.yandex.ru/2.1/?lang=uz_UZ${apiKey}`
+    script.async = true
+    script.onload = initMap
+    document.head.appendChild(script)
+
+    return () => {
+      if (ymapRef.current) {
+        ymapRef.current.destroy()
+        ymapRef.current = null
+        markersRef.current = []
+      }
+    }
+  }, [])
+
+  /* ---------- Active filial o'zgarganda xarita pan qiladi ---------- */
+  useEffect(() => {
+    if (ymapRef.current && branches[active]) {
+      ymapRef.current.panTo(branches[active].coords, { flying: true, duration: 500 })
+    }
+  }, [active])
 
   return (
     <main className="locations-page page-enter">
       <section className="page-hero locations-hero">
         <div className="page-hero-bg" />
         <div className="container page-hero-content">
-          {/* <span className="page-eyebrow">Manzillar</span> */}
-          <h1>BIZNING MANZILLARIMIZ</h1>
-          <p>Filiallarimiz Dushanbadan–Shanbagacha, soat 09:00 dan 17:00 gacha ishlaydi</p>
+          <h1>BIZNING FILIALLARIMIZ</h1>
+          <p>Hozirda Colba markazining Toshkent shahrida 3 ta filiali mavjud</p>
         </div>
       </section>
 
@@ -29,7 +121,7 @@ export default function Locations() {
           <div className="loc-band-items">
             <div className="loc-band-item">
               <span className="loc-band-icon">🏢</span>
-              <strong>2</strong>
+              <strong>3</strong>
               <span>Filiallar</span>
             </div>
             <div className="loc-band-div" />
@@ -58,21 +150,16 @@ export default function Locations() {
       <section className="section">
         <div className="container">
           <div className="locations-layout">
-            {/* Map */}
+
+            {/* Yandex Map — iframe emas, to'g'ridan-to'g'ri div */}
             <div className="map-wrap">
               <div className="map-placeholder">
-                <iframe
-                  title="Tashkent map"
-                  src={MAP_IFRAME}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0, borderRadius: 'var(--radius-xl)' }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
+                <div
+                  ref={mapRef}
+                  style={{ width: '100%', height: '100%', borderRadius: 'var(--radius-xl)' }}
                 />
                 <div className="map-overlay-badge">
-                  <span>📍</span> Toshkent shahrida 2 filial
+                  <span>📍</span> Toshkent shahrida 3 filial
                 </div>
               </div>
             </div>
@@ -93,17 +180,34 @@ export default function Locations() {
                     </div>
                     <div className="branch-info">
                       <h4>{b.name}</h4>
-                      <p>{b.address}</p>
+                      <p>{b.district}, {b.address}</p>
                       <span className="branch-landmark">{b.landmark}</span>
                     </div>
                   </div>
+
                   <div className="branch-actions">
-                    <a href={`https://yandex.com/maps/?text=${encodeURIComponent('Toshkent ' + b.name)}`} target="_blank" rel="noreferrer" className="map-action-btn" title="Yandex Maps" onClick={e => e.stopPropagation()}>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <a href={yandexLink(b)} target="_blank" rel="noreferrer"
+                      className="map-action-btn yandex-btn" title="Yandex Maps"
+                      onClick={e => e.stopPropagation()}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                      </svg>
                     </a>
-                    <a href={`https://maps.google.com/?q=Toshkent+${b.name}`} target="_blank" rel="noreferrer" className="map-action-btn maps-btn" title="Google Maps" onClick={e => e.stopPropagation()}>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                    <a href={googleLink(b)} target="_blank" rel="noreferrer"
+                      className="map-action-btn maps-btn" title="Google Maps"
+                      onClick={e => e.stopPropagation()}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                      </svg>
                     </a>
+                    {/* <a href={`https://yandex.uz/maps/?panorama[point]=${b.coords[1]},${b.coords[0]}`}
+                      target="_blank" rel="noreferrer"
+                      className="map-action-btn street-btn" title="Ko'cha ko'rinishi"
+                      onClick={e => e.stopPropagation()}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                      </svg>
+                    </a> */}
                   </div>
                 </div>
               ))}
