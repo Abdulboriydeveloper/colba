@@ -69,7 +69,7 @@ export default function Footer() {
               </svg>
               Du–Sha: 09:00 – 17:00
             </p>
-            <Link to="/" className="btn-primary footer-cta">
+            <Link to="/registration" className="btn-primary footer-cta">
               Ariza qoldirish
             </Link>
           </div>

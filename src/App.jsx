@@ -1,7 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import Registration from './components/Registration'
 
 import Home from './pages/Home'
 import About from './pages/About'
@@ -12,11 +14,14 @@ import Results from './pages/Results'
 import Locations from './pages/Locations'
 import FAQ from './pages/FAQ'
 
-export default function App() {
+function AppContent() {
+  const location = useLocation()
+  const isRegistrationPage = location.pathname === '/registration'
+
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
-      <Navbar />
+      {!isRegistrationPage && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -26,8 +31,17 @@ export default function App() {
         <Route path="/results" element={<Results />} />
         <Route path="/locations" element={<Locations />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/registration" element={<Registration />} />
       </Routes>
-      <Footer />
+      {!isRegistrationPage && <Footer />}
+    </>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   )
 }

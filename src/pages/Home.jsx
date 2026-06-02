@@ -179,7 +179,7 @@ export default function Home() {
                 <p className="hero-cta-label">3 kunlik BEPUL darsga yoziling</p>
                 <span className="hero-cta-arrow" aria-hidden="true">→</span>
                 <div className="hero-actions">
-                  <Link to="/about" className="btn-primary">
+                  <Link to="/registration" className="btn-primary">
                     Ariza qoldirish
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <path d="M5 12h14M12 5l7 7-7 7"/>

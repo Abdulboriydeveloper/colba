@@ -1,5 +1,6 @@
 import ContactForm from '../components/ContactForm'
 import './System.css'
+import founderImg from '../assets/images/dnasriddinov.png'
 
 const advantages = [
   {
@@ -43,7 +44,7 @@ export default function System() {
         <div className="page-hero-bg" />
         <div className="container page-hero-content">
           <h1>O'QUV DASTURIMIZ</h1>
-          <p>Colba ta’lim markazi muqobili boʻlmagan mualliflik oʻquv dasturi va metodikasiga ega.</p>
+          <p>Colba ta'lim markazi muqobili boʻlmagan mualliflik oʻquv dasturi va metodikasiga ega.</p>
         </div>
       </section>
 
@@ -52,9 +53,8 @@ export default function System() {
         <div className="container">
           <div className="system-founder-grid">
 
-            {/* Matn */}
+            {/* Chap: Matn + Rasm */}
             <div className="founder-text-block">
-              {/* <div className="sys-eyebrow">Mualliflik dasturi</div> */}
               <h2 className="sys-heading">
                 Colba'ning muqobili<br />
                 bo'lmagan metodikasi
@@ -68,16 +68,16 @@ export default function System() {
                 formulalari borligi bilan ajralib turadi.
               </p>
 
+              {/* Founder card with real photo */}
               <div className="founder-signature-card">
                 <div className="founder-avatar-wrap">
-                  {/* Rasmni qo'yish uchun <img> ni almashtiring */}
                   <div className="founder-avatar-placeholder">
-                    <span>👨‍🏫</span>
+                    <img src={founderImg} alt="Doniyor Nasriddinov" />
                   </div>
                 </div>
                 <div className="founder-sig-info">
                   <div className="founder-sig-name">Doniyor Nasriddinov</div>
-                  <div className="founder-sig-role">Colba asoschisi &amp; bosh metodist</div>
+                  <div className="founder-sig-role">Colba asoschisi &amp; Bosh metodist</div>
                   <div className="founder-sig-desc">
                     Ko'p yillik izlanish va tajriba asosida yaratilgan
                     mualliflik o'quv dasturining muallifi
@@ -86,7 +86,7 @@ export default function System() {
               </div>
             </div>
 
-            {/* Qo'shimcha panel */}
+            {/* O'ng: Detail panel */}
             <div className="founder-detail-block">
               <div className="detail-panel">
                 <div className="detail-panel-header">
@@ -129,6 +129,7 @@ export default function System() {
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>

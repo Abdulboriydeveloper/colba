@@ -1,25 +1,22 @@
+import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import ContactForm from '../components/ContactForm'
 import './Teachers.css'
 
-const teachers = [
-  { name: 'Mukhammadisa Makhmudov', subject: 'Kimyo', score: '97/100', qual: 'DTM Olimpiada', exp: '7 yil', students: '3 500+', badge: 'top', color: '#00b4d8' },
-  { name: 'Kristina Khafizova', subject: 'Biologiya', score: '98/100', qual: 'PhD, Biologiya', exp: '5 yil', students: '1 000+', badge: 'top', color: '#2ec4b6' },
-  { name: 'Nurmuhammad Ravshanov', subject: 'Kimyo', score: '96/100', qual: 'Kimyo fanlari nomzodi', exp: '12 yil', students: '4 000+', badge: 'senior', color: '#f77f00' },
-  { name: 'Diyor Soliyev', subject: 'Biologiya', score: '95/100', qual: 'Biologiya fanlari nomzodi', exp: '10 yil', students: '1 000+', badge: 'senior', color: '#e63946' },
-  { name: 'Aziz Jalilov', subject: 'Kimyo', score: '97/100', qual: 'Kimyo PhD', exp: '10 yil', students: '3 500+', badge: 'top', color: '#457b9d' },
-  { name: 'Umida Karimova', subject: 'Biologiya', score: '96/100', qual: 'PhD, Tibbiyot', exp: '17 yil', students: '7 000+', badge: 'legend', color: '#6a4c93' },
-  { name: 'Odilbek Shavkiyev', subject: 'Kimyo', score: '95/100', qual: 'Professor, Kimyo', exp: '12 yil', students: '4 000+', badge: 'senior', color: '#1d3557' },
-  { name: 'Khojimurod Yusupov', subject: 'Biologiya', score: '96/100', qual: 'Biologiya PhD', exp: '13 yil', students: '5 000+', badge: 'senior', color: '#2d6a4f' },
-  { name: 'Timur Inagamov', subject: 'Kimyo', score: '95/100', qual: 'Kimyo Professori', exp: '25+ yil', students: '10 000+', badge: 'legend', color: '#780000' },
-  { name: 'Foziljon Ergashaliyev', subject: 'Biologiya', score: '96/100', qual: 'Biologiya fanlari nomzodi', exp: '9 yil', students: '5 000+', badge: 'senior', color: '#4a4e69' },
-]
+const fallbackTeacherImage = '/teachers/umida-karimova.jpg'
 
-const badgeConfig = {
-  top: { label: '⭐ Top Ustoz', bg: '#ffd60a22', border: '#ffd60a', color: '#b88600' },
-  senior: { label: '🎖 Senior', bg: '#00b4d822', border: '#00b4d8', color: '#007ea8' },
-  legend: { label: '👑 Legend', bg: '#f77f0022', border: '#f77f00', color: '#c56200' },
-}
+const teachers = [
+  { name: 'Mukhammadisa Makhmudov', subject: 'Kimyo', exp: '7 yil', students: '3 500+', color: '#00b4d8', image: '/teachers/mukhammadisa-makhmudov.jpg' },
+  { name: 'Kristina Khafizova', subject: 'Biologiya', exp: '5 yil', students: '1 000+', color: '#2ec4b6', image: '/teachers/kristina-khafizova.jpg' },
+  { name: 'Nurmuhammad Ravshanov', subject: 'Kimyo', exp: '12 yil', students: '4 000+', color: '#f77f00', image: '/teachers/nurmuhammad-ravshanov.jpg' },
+  { name: 'Diyor Soliyev', subject: 'Biologiya', exp: '10 yil', students: '1 000+', color: '#e63946', image: '/teachers/diyor-soliyev.jpg' },
+  { name: 'Aziz Jalilov', subject: 'Kimyo', exp: '10 yil', students: '3 500+', color: '#457b9d', image: '/teachers/aziz-jalilov.jpg' },
+  { name: 'Umida Karimova', subject: 'Biologiya', exp: '17 yil', students: '7 000+', color: '#6a4c93', image: '/teachers/umida-karimova.jpg' },
+  { name: 'Odilbek Shavkiyev', subject: 'Kimyo', exp: '12 yil', students: '4 000+', color: '#1d3557', image: '/teachers/odilbek-shavkiyev.jpg' },
+  { name: 'Khojimurod Yusupov', subject: 'Biologiya', exp: '13 yil', students: '5 000+', color: '#2d6a4f', image: '/teachers/khojimurod-yusupov.jpg' },
+  { name: 'Timur Inagamov', subject: 'Kimyo', exp: '25+ yil', students: '10 000+', color: '#780000', image: '/teachers/timur-inagamov.jpg' },
+  { name: 'Foziljon Ergashaliyev', subject: 'Biologiya', exp: '9 yil', students: '5 000+', color: '#4a4e69', image: '/teachers/foziljon-ergashaliyev.jpg' },
+]
 
 export default function Teachers() {
   const [filter, setFilter] = useState('all')
@@ -54,48 +51,46 @@ export default function Teachers() {
           {/* Grid */}
           <div className="teachers-grid">
             {filtered.map((t, i) => {
-              const bc = badgeConfig[t.badge]
               return (
                 <div className="teacher-card" key={i} style={{ '--accent': t.color }}>
-                  <div className="teacher-card-top">
-                    <div className="teacher-avatar" style={{ background: `${t.color}22`, border: `2px solid ${t.color}44` }}>
-                      <span style={{ fontSize: '2.2rem' }}>
-                        {t.subject === 'Kimyo' ? '⚗️' : '🔬'}
-                      </span>
+                  <div className="teacher-photo-wrap">
+                    <div className="teacher-photo-fallback">
+                      <span>{t.name.split(' ').map(part => part[0]).join('').slice(0, 2)}</span>
                     </div>
-                    <div
-                      className="teacher-badge"
-                      style={{ background: bc.bg, borderColor: bc.border, color: bc.color }}
-                    >
-                      {bc.label}
-                    </div>
+                    <img
+                      src={t.image}
+                      alt={t.name}
+                      className="teacher-photo"
+                      onError={(event) => {
+                        if (event.currentTarget.src.endsWith(fallbackTeacherImage)) {
+                          event.currentTarget.style.display = 'none'
+                          return
+                        }
+
+                        event.currentTarget.src = fallbackTeacherImage
+                      }}
+                    />
                   </div>
 
                   <div className="teacher-info">
-                    <div className="teacher-subject" style={{ color: t.color }}>{t.subject}</div>
+                    <div className="teacher-subject">{t.subject}</div>
                     <h3 className="teacher-name">{t.name}</h3>
-                    <div className="teacher-qual">{t.qual}</div>
-                  </div>
-
-                  <div className="teacher-score">
-                    <div className="score-label">Ball</div>
-                    <div className="score-num" style={{ color: t.color }}>{t.score}</div>
                   </div>
 
                   <div className="teacher-stats">
                     <div className="t-stat">
-                      <div className="t-stat-num">{t.exp}</div>
                       <div className="t-stat-label">Tajriba</div>
+                      <div className="t-stat-num">{t.exp}</div>
                     </div>
                     <div className="t-stat-divider" />
                     <div className="t-stat">
-                      <div className="t-stat-num">{t.students}</div>
                       <div className="t-stat-label">O'quvchilar</div>
+                      <div className="t-stat-num">{t.students}</div>
                     </div>
                   </div>
 
                   <div className="teacher-overlay">
-                    <button className="teacher-cta">Ro'yxatdan o'tish</button>
+                    <Link to="/registration" className="teacher-cta">Ro'yxatdan o'tish</Link>
                   </div>
                 </div>
               )
@@ -103,9 +98,9 @@ export default function Teachers() {
           </div>
 
           <div style={{ textAlign: 'center', marginTop: 48 }}>
-            <button className="btn-primary">
+            <Link to="/registration" className="btn-primary">
               ✦ Ro'yxatdan o'tish
-            </button>
+            </Link>
           </div>
         </div>
       </section>

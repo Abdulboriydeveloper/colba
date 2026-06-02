@@ -2,17 +2,19 @@ import ContactForm from '../components/ContactForm'
 import ResultsSlider from '../components/ResultsSlider'
 import './Results.css'
 
+const fallbackCertificateImage = '/certificates/solixa.jpg'
+
 const results = [
-  { name: 'Azizbek T.', subject: 'Kimyo', score: '97/100', year: '2024' },
-  { name: 'Malika R.', subject: 'Biologiya', score: '98/100', year: '2024' },
-  { name: "Jasur O'.", subject: 'DTM', score: '189.2', year: '2024' },
-  { name: 'Nodira S.', subject: 'Kimyo', score: '96/100', year: '2024' },
-  { name: 'Bobur K.', subject: 'Biologiya', score: '97/100', year: '2024' },
-  { name: 'Zulfiya M.', subject: 'DTM', score: '191.5', year: '2024' },
-  { name: 'Sherzod A.', subject: 'Kimyo', score: '95/100', year: '2023' },
-  { name: 'Dilnoza Y.', subject: 'Biologiya', score: '96/100', year: '2023' },
-  { name: 'Madina S.', subject: 'DTM', score: '188.6', year: '2023' },
-  { name: 'Ibrohim N.', subject: 'Kimyo', score: '94/100', year: '2023' },
+  { name: 'Solixa X.', subject: 'Kimyo', score: '97/100', year: '2024', image: '/certificates/solixa.jpg' },
+  { name: 'Malika R.', subject: 'Biologiya', score: '98/100', year: '2024', image: '/certificates/malika-r.jpg' },
+  { name: "Jasur O'.", subject: 'DTM', score: '189.2', year: '2024', image: '/certificates/jasur-o.jpg' },
+  { name: 'Nodira S.', subject: 'Kimyo', score: '96/100', year: '2024', image: '/certificates/nodira-s.jpg' },
+  { name: 'Bobur K.', subject: 'Biologiya', score: '97/100', year: '2024', image: '/certificates/bobur-k.jpg' },
+  { name: 'Zulfiya M.', subject: 'DTM', score: '191.5', year: '2024', image: '/certificates/zulfiya-m.jpg' },
+  { name: 'Sherzod A.', subject: 'Kimyo', score: '95/100', year: '2023', image: '/certificates/sherzod-a.jpg' },
+  { name: 'Dilnoza Y.', subject: 'Biologiya', score: '96/100', year: '2023', image: '/certificates/dilnoza-y.jpg' },
+  { name: 'Madina S.', subject: 'DTM', score: '188.6', year: '2023', image: '/certificates/madina-s.jpg' },
+  { name: 'Ibrohim N.', subject: 'Kimyo', score: '94/100', year: '2023', image: '/certificates/ibrohim-n.jpg' },
 ]
 
 const overallStats = [
@@ -45,11 +47,52 @@ export default function Results() {
 
       <section className="section">
         <div className="container">
-          <h2 className="section-title">O'quvchilar natijalari</h2>
+          <h2 className="section-title">O'quvchilar sertifikatlari</h2>
           <p className="section-subtitle">
-            O'quvchilarimiz doimiy ravishda yuqori natijalarni qayd etib, tibbiyot oliygohlariga qabul qilinishmoqda
+            O'quvchilarimizning real natijalari va sertifikatlari
           </p>
 
+          <div className="certificates-grid">
+            {results.map((result, index) => (
+              <article className="certificate-card" key={`${result.name}-${index}`}>
+                <div className="certificate-image-wrap">
+                  <div className="certificate-fallback" aria-hidden="true">
+                    <div className="certificate-paper">
+                      <span>{result.subject}</span>
+                      <strong>{result.score}</strong>
+                    </div>
+                  </div>
+                  <img
+                    src={result.image}
+                    alt={`${result.name} sertifikati`}
+                    className="certificate-image"
+                    onError={(event) => {
+                      if (event.currentTarget.src.endsWith(fallbackCertificateImage)) {
+                        event.currentTarget.style.display = 'none'
+                        return
+                      }
+
+                      event.currentTarget.src = fallbackCertificateImage
+                    }}
+                  />
+                </div>
+                <div className="certificate-meta">
+                  <div>
+                    <h3>{result.name}</h3>
+                    <p>{result.subject}</p>
+                  </div>
+                  <strong>{result.score}</strong>
+                  <span>{result.year}</span>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section results-slider-section">
+        <div className="container">
+          <h2 className="section-title">Natijalar lentasi</h2>
           <ResultsSlider results={results} ariaLabel="O'quvchilar natijalari slayderi" />
         </div>
       </section>

@@ -78,8 +78,13 @@
   overflow: hidden;
 }
 
-/* Replace above with <img> when photo is ready:
-   .founder-avatar-placeholder img { width:100%; height:100%; object-fit:cover; border-radius:50%; } */
+.founder-avatar-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
 
 .founder-sig-name {
   font-family: var(--font-display);
