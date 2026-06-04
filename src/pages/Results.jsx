@@ -6,15 +6,17 @@ const fallbackCertificateImage = '/certificates/solixa.jpg'
 
 const results = [
   { name: 'Solixa X.', subject: 'Kimyo', score: '97/100', year: '2024', image: '/certificates/solixa.jpg' },
-  { name: 'Malika R.', subject: 'Biologiya', score: '98/100', year: '2024', image: '/certificates/malika-r.jpg' },
-  { name: "Jasur O'.", subject: 'DTM', score: '189.2', year: '2024', image: '/certificates/jasur-o.jpg' },
-  { name: 'Nodira S.', subject: 'Kimyo', score: '96/100', year: '2024', image: '/certificates/nodira-s.jpg' },
-  { name: 'Bobur K.', subject: 'Biologiya', score: '97/100', year: '2024', image: '/certificates/bobur-k.jpg' },
-  { name: 'Zulfiya M.', subject: 'DTM', score: '191.5', year: '2024', image: '/certificates/zulfiya-m.jpg' },
-  { name: 'Sherzod A.', subject: 'Kimyo', score: '95/100', year: '2023', image: '/certificates/sherzod-a.jpg' },
-  { name: 'Dilnoza Y.', subject: 'Biologiya', score: '96/100', year: '2023', image: '/certificates/dilnoza-y.jpg' },
-  { name: 'Madina S.', subject: 'DTM', score: '188.6', year: '2023', image: '/certificates/madina-s.jpg' },
-  { name: 'Ibrohim N.', subject: 'Kimyo', score: '94/100', year: '2023', image: '/certificates/ibrohim-n.jpg' },
+  { name: 'Malika R.', subject: 'Biologiya', score: '98/100', year: '2024', image: '/certificates/guli.jpg' },
+  { name: "Jasur O'.", subject: 'DTM', score: '189.2', year: '2024', image: '/certificates/habiba.jpg' },
+  { name: 'Nodira S.', subject: 'Kimyo', score: '96/100', year: '2024', image: '/certificates/komilaxon.jpg' },
+  { name: 'Bobur K.', subject: 'Biologiya', score: '97/100', year: '2024', image: '/certificates/madina.jpg' },
+  { name: 'Zulfiya M.', subject: 'DTM', score: '191.5', year: '2024', image: '/certificates/munira.jpg' },
+  { name: 'Sherzod A.', subject: 'Kimyo', score: '95/100', year: '2023', image: '/certificates/muxlisabonu.jpg' },
+  { name: 'Dilnoza Y.', subject: 'Biologiya', score: '96/100', year: '2023', image: '/certificates/parizoda.jpg' },
+  { name: 'Madina S.', subject: 'DTM', score: '188.6', year: '2023', image: '/certificates/robiya.jpg' },
+  { name: 'Ibrohim N.', subject: 'Kimyo', score: '94/100', year: '2023', image: '/certificates/sevinchoy.jpg' },
+  { name: 'Madina S.', subject: 'DTM', score: '188.6', year: '2023', image: '/certificates/soliha' },
+  { name: 'Ibrohim N.', subject: 'Kimyo', score: '94/100', year: '2023', image: '/certificates/tasnima.jpg' },
 ]
 
 const overallStats = [
@@ -82,7 +84,7 @@ export default function Results() {
                     <p>{result.subject}</p>
                   </div>
                   <strong>{result.score}</strong>
-                  <span>{result.year}</span>
+                  {/* <span>{result.year}</span> */}
                 </div>
               </article>
             ))}
@@ -90,12 +92,12 @@ export default function Results() {
         </div>
       </section>
 
-      <section className="section results-slider-section">
+      {/* <section className="section results-slider-section">
         <div className="container">
           <h2 className="section-title">Natijalar lentasi</h2>
           <ResultsSlider results={results} ariaLabel="O'quvchilar natijalari slayderi" />
         </div>
-      </section>
+      </section> */}
 
       <ContactForm />
     </main>

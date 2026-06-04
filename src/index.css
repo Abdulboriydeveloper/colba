@@ -61,7 +61,7 @@ button { cursor: pointer; border: none; font-family: var(--font-body); }
 }
 
 .section {
-  padding: 96px 0;
+  padding: 60px 0;
 }
 
 .section-dark {

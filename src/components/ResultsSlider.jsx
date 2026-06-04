@@ -37,7 +37,7 @@ export default function ResultsSlider({ results, ariaLabel = 'Bitiruvchilar nati
                 <small>{result.subject}</small>
               </div>
               <strong>{result.score}</strong>
-              <em>{result.year}</em>
+              {/* <em>{result.year}</em> */}
             </div>
           </div>
         )

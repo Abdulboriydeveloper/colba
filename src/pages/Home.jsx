@@ -5,7 +5,7 @@ import StatsCards from '../components/StatsCards'
 import './Home.css'
 
 const stats = [
-  { icon: '🏢', num: '2', label: 'Filiallar' },
+  { icon: '🏢', num: '3', label: 'Filiallar' },
   { icon: '👥', num: '50+', label: 'Xodimlar' },
   { icon: '📅', num: '16 yil', label: 'Faoliyat davri' },
   { icon: '🎓', num: '12 000+', label: "O'quvchilar" },
