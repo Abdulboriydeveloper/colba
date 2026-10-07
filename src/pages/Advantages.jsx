@@ -32,18 +32,18 @@ const advantages = [
     title: 'Test markazi',
     desc: "Alohida test markazida MOCK imtihonlari va haqiqiy imtihon formatiga yaqin sinovlar o'tkaziladi.",
   },
-  {
-    icon: '🏆',
-    color: '#fcbf49',
-    title: 'Bepul tadbirlar',
-    desc: "Olimpiada, seminar, taniqli olimlar bilan suhbat va sayohatlar Colba o'quvchilari uchun tashkil qilinadi.",
-  },
-  {
-    icon: '☕',
-    color: '#2ec4b6',
-    title: 'Co-working zonalar',
-    desc: "Filiallarimizda o'quvchilar mustaqil tayyorlanishi va qo'shimcha dars qilishi uchun qulay zonalar mavjud.",
-  },
+  // {
+  //   icon: '🏆',
+  //   color: '#fcbf49',
+  //   title: 'Bepul tadbirlar',
+  //   desc: "Olimpiada, seminar, taniqli olimlar bilan suhbat va sayohatlar Colba o'quvchilari uchun tashkil qilinadi.",
+  // },
+  // {
+  //   icon: '☕',
+  //   color: '#2ec4b6',
+  //   title: 'Co-working zonalar',
+  //   desc: "Filiallarimizda o'quvchilar mustaqil tayyorlanishi va qo'shimcha dars qilishi uchun qulay zonalar mavjud.",
+  // },
   {
     icon: '🔬',
     color: '#00b4d8',

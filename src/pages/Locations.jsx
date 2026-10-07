@@ -10,7 +10,7 @@ const branches = [
     address: "Bog' ko'chasining 2-tor ko'chasi, 1/3",
     landmark: "Tinchlik metro bekati yonida",
     district: 'Shayxontohur tumani',
-    coords: [41.3202, 69.2631], // 👈 [latitude, longitude]
+    coords: [41.332327, 69.217268], // 👈 [latitude, longitude]
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const branches = [
     address: "Tinchlik metro bekatidan 600 metr",
     landmark: "Tinchlik metro bekati yaqinida",
     district: 'Shayxontohur tumani',
-    coords: [41.3150, 69.2580], // 👈 [latitude, longitude]
+    coords: [41.328249, 69.214360], // 👈 [latitude, longitude]
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const branches = [
     address: "O'zgarish mahalla fuqarolar yig'ini",
     landmark: "O'zgarish metro bekati",
     district: "Sirg'ali tumani",
-    coords: [41.2480, 69.1720], // 👈 [latitude, longitude]
+    coords: [41.226546, 69.205152], // 👈 [latitude, longitude]
   },
 ]
 

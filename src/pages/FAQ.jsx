@@ -13,12 +13,12 @@ const faqs = [
   },
   {
     q: "Darslar qaysi vaqtlarda bo’ladi?",
-    a: "Darslarimiz haftasiga 5 kun ya’ni dushanbadan jumagacha, soat 14:00 dan 18:00 gacha o‘tkaziladi."
+    a: "Darslarimiz haftasiga 5 kun ya’ni dushanbadan jumagacha, soat 14:00 dan 19:00 gacha o‘tkaziladi. Kuz - qish oylarida 14:20-18:30"
   },
-  {
-    q: "Colba markazida o‘qishni boshlasam, kitob va daftar sotib olishim kerakmi?",
-    a: "Colba markazida har bir o‘quvchiga kitob va daftar bepul taqdim etiladi."
-  },
+  // {
+  //   q: "Colba markazida o‘qishni boshlasam, kitob va daftar sotib olishim kerakmi?",
+  //   a: "Colba markazida har bir o‘quvchiga kitob va daftar bepul taqdim etiladi."
+  // },
   {
     q: "Milliy sertifikat olishim uchun qancha vaqt o’qishim kerak?",
     a: "Colba markazining ta’lim dasturi 1,5-2 yilga mo’ljallangan. Dasturni tugatsangiz yuqori natijaga chiqishingizni kafolatlaymiz."

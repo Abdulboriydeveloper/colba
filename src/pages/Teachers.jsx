@@ -13,7 +13,7 @@ const teachers = [
   { name: 'Jahongir Jabborov', subject: 'Kimyo', exp: '5 yil', students: '500+', color: '#457b9d', image: '/teachers/jabborov-jahongir.JPG' },
   { name: 'Ilyosbek Nabijonov', subject: 'Matematika', exp: '5 yil', students: '1 000+', color: '#6a4c93', image: '/teachers/nabijonov-ilyosbek.JPG' },
   { name: 'Umida Karimova', subject: 'Kimyo', exp: '12 yil', students: '4 000+', color: '#1d3557', image: '/teachers/umida-karimova.jpg' },
-  { name: 'Shuxrat Usmonov', subject: 'Kimyo', exp: '5 yil', students: '500+', color: '#2d6a4f', image: '/teachers/usmonov-shuxrat.JPG' },
+  // { name: 'Shuxrat Usmonov', subject: 'Kimyo', exp: '5 yil', students: '500+', color: '#2d6a4f', image: '/teachers/usmonov-shuxrat.JPG' },
   { name: 'Timur Inagamov', subject: 'Kimyo', exp: '25+ yil', students: '10 000+', color: '#780000', image: '/teachers/timur-inagamov.jpg' },
   { name: 'Foziljon Ergashaliyev', subject: 'Biologiya', exp: '9 yil', students: '5 000+', color: '#4a4e69', image: '/teachers/foziljon-ergashaliyev.jpg' },
 ]
@@ -37,7 +37,7 @@ export default function Teachers() {
         <div className="container">
           {/* Filter */}
           <div className="teachers-filter">
-            {['all', 'Kimyo', 'Biologiya', 'Matematika', 'Ona tili'].map(f => (
+            {['all', 'Kimyo', 'Biologiya', 'Matematika', 'Ona tili', 'Tarix'].map(f => (
               <button
                 key={f}
                 className={`filter-btn ${filter === f ? 'active' : ''}`}

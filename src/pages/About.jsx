@@ -3,7 +3,7 @@ import StatsCards from '../components/StatsCards'
 import './About.css'
 
 const stats = [
-  { icon: '🏢', num: '2', label: 'Filiallar' },
+  { icon: '🏢', num: '3', label: 'Filiallar' },
   { icon: '👥', num: '50+', label: 'Xodimlar' },
   { icon: '📅', num: '16 yil', label: 'Faoliyat davri' },
   { icon: '🎓', num: '12 000+', label: "O'quvchilar" },
@@ -22,15 +22,14 @@ export default function About() {
       <section className="section about-main-section">
         <div className="container about-intro">
           <div className="about-video-wrap">
-            <div className="video-placeholder">
-              <div className="play-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                  <path d="M5 3l14 9-14 9V3z"/>
-                </svg>
-              </div>
-              <p>Colba haqida video</p>
-              <div className="video-badge">▶ 3:45</div>
-            </div>
+            <iframe
+              className="about-video"
+              src="https://www.youtube.com/embed/uIn1KamUaxk"
+              title="Colba haqida video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
           </div>
 
           <div className="about-text">
