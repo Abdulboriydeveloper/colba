@@ -1,4 +1,5 @@
 import ContactForm from '../components/ContactForm'
+import PageFAQ from '../components/PageFAQ'
 import ResultsSlider from '../components/ResultsSlider'
 import './Results.css'
 
@@ -98,6 +99,8 @@ export default function Results() {
           <ResultsSlider results={results} ariaLabel="O'quvchilar natijalari slayderi" />
         </div>
       </section> */}
+
+      <PageFAQ page="results" />
 
       <ContactForm />
     </main>

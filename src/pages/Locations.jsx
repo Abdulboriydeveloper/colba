@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import ContactForm from '../components/ContactForm'
+import PageFAQ from '../components/PageFAQ'
 import './Locations.css'
 
 // ✅ Koordinatalarni shu yerga kiriting: [latitude, longitude]
@@ -7,25 +8,34 @@ const branches = [
   {
     id: 1,
     name: 'TINCHLIK',
-    address: "Bog' ko'chasining 2-tor ko'chasi, 1/3",
-    landmark: "Tinchlik metro bekati yonida",
+    address: 'Tinchlik metro bekati yonida',
+    landmark: 'Tinchlik metro bekati yonida',
     district: 'Shayxontohur tumani',
+    metro: 'Tinchlik',
+    bus: '23',
+    desc: "Tinchlik metro bekati yonida joylashgan. 23-avtobus va Tinchlik metrosi orqali kelish mumkin.",
     coords: [41.332327, 69.217268], // 👈 [latitude, longitude]
   },
   {
     id: 2,
     name: 'NURAFSHON',
-    address: "Tinchlik metro bekatidan 600 metr",
-    landmark: "Tinchlik metro bekati yaqinida",
+    address: "Toshko'cha ko'chasi, 8-uy",
+    landmark: 'Tinchlik metro bekatidan 600 metr',
     district: 'Shayxontohur tumani',
+    metro: 'Tinchlik',
+    bus: '23',
+    desc: "Toshko'cha ko'chasi, 8-uy. Eng yaqin metro bekati Tinchlik, undan filialgacha 600 metr. Bu yerga 23-avtobus bilan ham kelish mumkin.",
     coords: [41.328249, 69.214360], // 👈 [latitude, longitude]
   },
   {
     id: 3,
-    name: "SIRGʻALI",
-    address: "O'zgarish mahalla fuqarolar yig'ini",
-    landmark: "O'zgarish metro bekati",
+    name: 'SERGELI',
+    address: "O'zgarish metro bekati yaqinida",
+    landmark: "O'zgarish metro bekati yaqinida",
     district: "Sirg'ali tumani",
+    metro: "O'zgarish",
+    bus: '86',
+    desc: "O'zgarish metro bekati yaqinida joylashgan. 86-avtobus va O'zgarish metrosi orqali kelish mumkin.",
     coords: [41.226546, 69.205152], // 👈 [latitude, longitude]
   },
 ]
@@ -64,7 +74,7 @@ export default function Locations() {
             b.coords,
             {
               balloonContentHeader: `<strong>${b.name}</strong>`,
-              balloonContentBody: `${b.district}<br/><small>${b.landmark}</small>`,
+              balloonContentBody: `${b.address}<br/><small>Metro: ${b.metro} · Avtobus: ${b.bus}</small>`,
             },
             {
               preset: 'islands#yellowDotIcon',   // sariq pin — birinchi rasmdagidek
@@ -139,7 +149,7 @@ export default function Locations() {
             <div className="loc-band-div" />
             <div className="loc-band-item">
               <span className="loc-band-icon">📞</span>
-              <strong>+998 78 113 78 18</strong>
+              <strong>+998 55 055 00 40</strong>
               <span>Umumiy raqam</span>
             </div>
           </div>
@@ -181,7 +191,11 @@ export default function Locations() {
                     <div className="branch-info">
                       <h4>{b.name}</h4>
                       <p>{b.district}, {b.address}</p>
-                      <span className="branch-landmark">{b.landmark}</span>
+                      <p className="branch-desc">{b.desc}</p>
+                      <div className="branch-transport">
+                        <span className="branch-chip">🚇 Metro: {b.metro}</span>
+                        <span className="branch-chip">🚌 Avtobus: {b.bus}</span>
+                      </div>
                     </div>
                   </div>
 
@@ -215,6 +229,8 @@ export default function Locations() {
           </div>
         </div>
       </section>
+
+      <PageFAQ page="locations" />
 
       <ContactForm />
     </main>

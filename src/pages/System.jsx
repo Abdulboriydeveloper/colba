@@ -1,4 +1,5 @@
 import ContactForm from '../components/ContactForm'
+import PageFAQ from '../components/PageFAQ'
 import './System.css'
 import founderImg from '../assets/images/dnasriddinov.png'
 
@@ -134,6 +135,38 @@ export default function System() {
         </div>
       </section>
 
+      {/* QAYSI TIZIM / NEGA */}
+      <section className="section system-why-section">
+        <div className="container">
+          <div className="system-why-grid">
+            <div className="detail-panel">
+              <div className="detail-panel-header">
+                <span className="detail-panel-icon">📘</span>
+                <h3>Bu qaysi o'quv tizimi?</h3>
+              </div>
+              <p>
+                Bu Colba asoschisi va bosh metodisti <strong>Doniyor Nasriddinov</strong> tomonidan
+                ishlab chiqilgan mualliflik dasturi. U ko'p yillik izlanish va tajriba asosida tuzilgan,
+                tabiiy fanlarni oson usulda tushuntirishga va murakkab masalalarni qisqa yechim
+                formulalari bilan ishlashga qaratilgan.
+              </p>
+            </div>
+            <div className="detail-panel">
+              <div className="detail-panel-header">
+                <span className="detail-panel-icon">❓</span>
+                <h3>Nega aynan shu tizim tanlangan?</h3>
+              </div>
+              <p>
+                Dastur tabiiy fanlari yaxshi rivojlangan <strong>Turkiya va Ozarbayjon</strong> tajribasidan
+                foydalanib tuzilgan. O'rganish nisbatan oson bo'lgani sababli o'quvchida qiyinchilik
+                kamayadi, qiziqish ortadi va natija yaxshilanadi. Dastur DTM imtihonlari va olimpiadalar
+                formatiga to'liq moslashtirilgan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ADVANTAGES GRID */}
       <section className="section system-advantages-section">
         <div className="container">
@@ -166,6 +199,8 @@ export default function System() {
           </div>
         </div>
       </section>
+
+      <PageFAQ page="system" />
 
       <ContactForm />
     </main>

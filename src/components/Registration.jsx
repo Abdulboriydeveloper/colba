@@ -3,6 +3,7 @@ import { BITRIX_FILIAL_IDS, sendLeadToBitrix } from "../utils/bitrixLead";
 import logoOq120 from "../assets/images/logoOq-120.png";
 import logoOq176 from "../assets/images/logoOq-176.png";
 import "./Registration.css";
+import PageFAQ from "./PageFAQ";
 
 /* ══════════════════════════════════════════════════
    DATA
@@ -538,6 +539,8 @@ export default function Registration() {
           </div>
         </div>
       </main>
+
+      <PageFAQ page="registration" />
     </div>
   );
 }

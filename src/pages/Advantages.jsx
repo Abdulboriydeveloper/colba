@@ -1,4 +1,5 @@
 import ContactForm from '../components/ContactForm'
+import PageFAQ from '../components/PageFAQ'
 import './Advantages.css'
 
 const advantages = [
@@ -6,31 +7,31 @@ const advantages = [
     icon: '🎯',
     color: '#00b4d8',
     title: '100% natija',
-    desc: "Colba ta'lim dasturini to'liq yakunlagan o'quvchilar tibbiyot oliygohlariga muddatidan oldin kirishadi.",
+    desc: "Dasturni o'quv shartlarini bajargan holda yakunlagan o'quvchilar uchun natija kafolatlanadi. Dastur 1,5-2 yilga mo'ljallangan. Bitiruvchilarning sertifikat va ballari Natijalar sahifasida joylangan.",
   },
   {
     icon: '📝',
     color: '#2ec4b6',
     title: 'Har kunlik imtihon',
-    desc: "O'quvchining mavzu o'zlashtirayotganini doimiy nazorat qilib borish uchun har kunlik imtihon tizimi joriy qilingan.",
+    desc: "Mavzuning o'zlashtirilishi har kuni imtihon orqali tekshiriladi. Bu bilimdagi bo'shliq to'planib qolishidan oldin uni aniqlashga imkon beradi. Natija o'quvchiga ham, ustozga ham qaysi mavzuga qaytish kerakligini ko'rsatadi.",
   },
   {
     icon: '📖',
     color: '#f77f00',
     title: 'Har kunlik darslar',
-    desc: "Haftasiga 5 kun, 4-5 soatdan o'qitish orqali tibbiyot oliygohlariga kirishingizga yordam beramiz.",
+    desc: "Darslar haftasiga besh kun, dushanbadan jumagacha, soat 14:00 dan 19:00 gacha o'tkaziladi. Kuz va qish oylarida jadval 14:20 dan 18:30 gacha. Kuniga 4-5 soatlik muntazam mashg'ulot mavzularni uzilishsiz o'zlashtirishga yordam beradi.",
   },
   {
     icon: '👨‍🏫',
     color: '#48cae4',
     title: "Bepul ikkinchi o'qituvchi",
-    desc: "Mavzuni yaxshi o'zlashtirolmagan o'quvchilar uchun yordamchi o'qituvchilar mavzularni qayta tushuntirib berishadi.",
+    desc: "Mavzuni yaxshi o'zlashtira olmagan o'quvchi uchun yordamchi o'qituvchi mavzuni qayta tushuntirib beradi. Bu xizmat uchun alohida to'lov olinmaydi.",
   },
   {
     icon: '✅',
     color: '#0096c7',
     title: 'Test markazi',
-    desc: "Alohida test markazida MOCK imtihonlari va haqiqiy imtihon formatiga yaqin sinovlar o'tkaziladi.",
+    desc: "Alohida test markazida MOCK imtihonlari va haqiqiy imtihon formatiga yaqin sinovlar o'tkaziladi. O'quvchi imtihon formatiga oldindan o'rganib boradi.",
   },
   // {
   //   icon: '🏆',
@@ -48,7 +49,7 @@ const advantages = [
     icon: '🔬',
     color: '#00b4d8',
     title: 'Mualliflik metodikasi',
-    desc: "Murakkab mavzularni oson tushuntirishga moslangan maxsus dastur va qisqa yechim formulalari bilan o'qitamiz.",
+    desc: "Dastur Colba asoschisi Doniyor Nasriddinovning ko'p yillik izlanishlari asosida tuzilgan. Murakkab mavzular oson usulda tushuntiriladi, masalalar uchun qisqa yechim formulalari beriladi. Metodika tabiiy fanlari yaxshi rivojlangan Turkiya va Ozarbayjon tajribasiga tayangan va DTM hamda olimpiada formatiga mos.",
   },
 ]
 
@@ -83,9 +84,11 @@ export default function Advantages() {
             <h2>3 kunlik BEPUL darsga ro'yxatdan o'ting</h2>
             <p>O'zingizga yaqin filial va qulay vaqtni tanlab, Colba dars jarayonini sinab ko'ring.</p>
           </div>
-          <a href="tel:+998781137818" className="btn-primary">Bog'lanish</a>
+          <a href="tel:+998550550040" className="btn-primary">Bog'lanish</a>
         </div>
       </section> */}
+
+      <PageFAQ page="advantages" />
 
       <ContactForm
         title="3 kunlik BEPUL darsga"

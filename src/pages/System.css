@@ -304,3 +304,17 @@
   .cta-band-inner { flex-direction: column; text-align: center; }
   .detail-stats-row { flex-wrap: wrap; }
 }
+/* ─── QAYSI TIZIM / NEGA ─────────────────────────────── */
+.system-why-section { padding-top: 0; }
+.system-why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.system-why-grid .detail-panel p {
+  color: var(--gray-700);
+  line-height: 1.7;
+}
+@media (max-width: 900px) {
+  .system-why-grid { grid-template-columns: 1fr; }
+}

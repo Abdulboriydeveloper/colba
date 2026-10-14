@@ -1,4 +1,5 @@
 import ContactForm from '../components/ContactForm'
+import PageFAQ from '../components/PageFAQ'
 import StatsCards from '../components/StatsCards'
 import './About.css'
 
@@ -48,6 +49,8 @@ export default function About() {
           <StatsCards stats={stats} />
         </div>
       </section>
+
+      <PageFAQ page="about" />
 
       <ContactForm />
     </main>

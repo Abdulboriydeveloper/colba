@@ -1,21 +1,35 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import ContactForm from '../components/ContactForm'
+import PageFAQ from '../components/PageFAQ'
 import './Teachers.css'
 
-const fallbackTeacherImage = '/teachers/umida-karimova.jpg'
+const fallbackTeacherImage = '/teachers/new/dadaxonova-oydinabonu.jpg'
 
 const teachers = [
-  { name: 'Oydinabonu Dadaxonova', subject: 'Biologiya', exp: '4 yil', students: '400+', color: '#00b4d8', image: '/teachers/dadaxonova-oydinabonu.JPG' },
-  { name: 'Feruzaxon Ergasheva', subject: 'Ona tili', exp: '6 yil', students: '1 200+', color: '#2ec4b6', image: '/teachers/ergasheva-feruzaxon.JPG' },
-  { name: 'Firuza Habibullayeva', subject: 'Biologiya', exp: '4 yil', students: '400+', color: '#f77f00', image: '/teachers/habibullayeva-feruza.JPG' },
-  { name: 'Bahrom Ibrohimov', subject: 'Biologiya', exp: '4 yil', students: '400+', color: '#e63946', image: '/teachers/ibrohimov-bahrom.JPG' },
-  { name: 'Jahongir Jabborov', subject: 'Kimyo', exp: '5 yil', students: '500+', color: '#457b9d', image: '/teachers/jabborov-jahongir.JPG' },
-  { name: 'Ilyosbek Nabijonov', subject: 'Matematika', exp: '5 yil', students: '1 000+', color: '#6a4c93', image: '/teachers/nabijonov-ilyosbek.JPG' },
-  { name: 'Umida Karimova', subject: 'Kimyo', exp: '12 yil', students: '4 000+', color: '#1d3557', image: '/teachers/umida-karimova.jpg' },
+  { name: 'Oydinabonu Dadaxonova', subject: 'Biologiya', badge: 'Sertifikatlar sohibi', exp: '4 yil', students: '100', color: '#00b4d8', image: '/teachers/new/dadaxonova-oydinabonu.jpg' },
+  { name: 'Firuza Habibullayeva', subject: 'Biologiya', badge: 'Sertifikatlar sohibi', exp: '4 yil', students: '100', color: '#f77f00', image: '/teachers/new/habibullayeva-feruza.jpg' },
+  { name: 'Bahrom Ibrohimov', subject: 'Biologiya', badge: 'Sertifikatlar sohibi', exp: '4 yil', students: '100', color: '#e63946', image: '/teachers/new/ibrohimov-bahrom.jpg' },
+  { name: "Shahzod To'rayev", subject: 'Biologiya', badge: 'Sertifikatlar sohibi', exp: '5 yil', students: '100', color: '#2ec4b6', image: '/teachers/new/torayev-shahzod.jpg' },
+  { name: "Hamroz Normo'minov", subject: 'Biologiya', badge: 'Sertifikatlar sohibi', exp: '3 yil', students: '100', color: '#4a4e69', image: '/teachers/new/normominov-hamroz.jpg' },
+  { name: 'Zebo Ilyosova', subject: 'Biologiya', badge: 'Sertifikatlar sohibi', exp: '3 yil', students: '100', color: '#780000', image: '/teachers/new/img-8957.jpg' },
+  { name: 'Jahongir Abdusattorov', subject: 'Biologiya', badge: 'Sertifikatlar sohibi', exp: '3 yil', students: '100', color: '#457b9d', image: '/teachers/new/abdusattorov-jahongir.jpg' },
+  { name: 'Jonibek Ergashev', subject: 'Biologiya', badge: 'Sertifikatlar sohibi', exp: '5 yil', students: '100', color: '#6a4c93', image: '/teachers/new/ergashev-jonibek.jpg' },
+  { name: 'Jonibek Jalolov', subject: 'Kimyo', badge: 'Sertifikatlar sohibi', exp: '4 yil', students: '60', color: '#0096c7', image: '/teachers/new/jalolov-jonibek.jpg' },
+  { name: 'Diyorbek Karimov', subject: 'Kimyo', badge: 'Sertifikatlar sohibi', exp: '4 yil', students: '100', color: '#1d3557', image: '/teachers/new/karimov-diyorbek.jpg' },
+  { name: "Sohibjon Yo'ldashev", subject: 'Kimyo', badge: 'Sertifikatlar sohibi', exp: '4 yil', students: '100', color: '#2d6a4f', image: '/teachers/new/yoldashev-sohibjon.jpg' },
+  { name: 'Jahongir Jabborov', subject: 'Kimyo', badge: 'Sertifikatlar sohibi', exp: '5 yil', students: '100', color: '#457b9d', image: '/teachers/new/jabborov-jahongir.jpg' },
+  { name: 'Anvarjon Xudoyberdiyev', subject: 'Kimyo', badge: 'Sertifikatlar sohibi', exp: '6 yil', students: '100', color: '#e63946', image: '/teachers/new/xudoyberdiyev-anvarjon.jpg' },
+  { name: 'Feruzaxon Ergasheva', subject: 'Ona tili', badge: 'Sertifikatlar sohibi', exp: '6 yil', students: '200', color: '#2ec4b6', image: '/teachers/new/ergasheva-feruzaxon.jpg' },
+  { name: 'Jahongir Qilichev', subject: 'Ona tili', badge: 'Sertifikatlar sohibi', exp: '5 yil', students: '200', color: '#0096c7', image: '/teachers/new/qilichev-jahongir.jpg' },
+  { name: 'Ilyosbek Nabijonov', subject: 'Matematika', badge: 'Sertifikatlar sohibi', exp: '5 yil', students: '200', color: '#6a4c93', image: '/teachers/new/nabijonov-ilyosbek.jpg' },
+
+  // Ro'yxatda yo'q — kerak bo'lsa izohdan chiqaring
+  // { name: 'Diyorbek Mehmonaliyev', subject: '', exp: '', students: '', color: '#00b4d8', image: '/teachers/new/mehmonaliyev-diyorbek.jpg' },
+  // { name: 'Umida Karimova', subject: 'Kimyo', exp: '12 yil', students: '4 000+', color: '#1d3557', image: '/teachers/umida-karimova.jpg' },
+  // { name: 'Timur Inagamov', subject: 'Kimyo', exp: '25+ yil', students: '10 000+', color: '#780000', image: '/teachers/timur-inagamov.jpg' },
+  // { name: 'Foziljon Ergashaliyev', subject: 'Biologiya', exp: '9 yil', students: '5 000+', color: '#4a4e69', image: '/teachers/foziljon-ergashaliyev.jpg' },
   // { name: 'Shuxrat Usmonov', subject: 'Kimyo', exp: '5 yil', students: '500+', color: '#2d6a4f', image: '/teachers/usmonov-shuxrat.JPG' },
-  { name: 'Timur Inagamov', subject: 'Kimyo', exp: '25+ yil', students: '10 000+', color: '#780000', image: '/teachers/timur-inagamov.jpg' },
-  { name: 'Foziljon Ergashaliyev', subject: 'Biologiya', exp: '9 yil', students: '5 000+', color: '#4a4e69', image: '/teachers/foziljon-ergashaliyev.jpg' },
 ]
 
 export default function Teachers() {
@@ -37,7 +51,7 @@ export default function Teachers() {
         <div className="container">
           {/* Filter */}
           <div className="teachers-filter">
-            {['all', 'Kimyo', 'Biologiya', 'Matematika', 'Ona tili', 'Tarix'].map(f => (
+            {['all', 'Kimyo', 'Biologiya', 'Matematika', 'Ona tili'].map(f => (
               <button
                 key={f}
                 className={`filter-btn ${filter === f ? 'active' : ''}`}
@@ -50,9 +64,9 @@ export default function Teachers() {
 
           {/* Grid */}
           <div className="teachers-grid">
-            {filtered.map((t, i) => {
+            {filtered.map((t) => {
               return (
-                <div className="teacher-card" key={i} style={{ '--accent': t.color }}>
+                <div className="teacher-card" key={t.name} style={{ '--accent': t.color }}>
                   <div className="teacher-photo-wrap">
                     <div className="teacher-photo-fallback">
                       <span>{t.name.split(' ').map(part => part[0]).join('').slice(0, 2)}</span>
@@ -60,6 +74,7 @@ export default function Teachers() {
                     <img
                       src={t.image}
                       alt={t.name}
+                      loading="lazy"
                       className="teacher-photo"
                       onError={(event) => {
                         if (event.currentTarget.src.endsWith(fallbackTeacherImage)) {
@@ -73,10 +88,12 @@ export default function Teachers() {
                   </div>
 
                   <div className="teacher-info">
-                    <div className="teacher-subject">{t.subject}</div>
+                    {t.subject && <div className="teacher-subject">{t.subject}</div>}
                     <h3 className="teacher-name">{t.name}</h3>
+                    {t.badge && <div className="teacher-badge">{t.badge}</div>}
                   </div>
 
+                  {(t.exp || t.students) && (
                   <div className="teacher-stats">
                     <div className="t-stat">
                       <div className="t-stat-label">Tajriba</div>
@@ -88,6 +105,7 @@ export default function Teachers() {
                       <div className="t-stat-num">{t.students}</div>
                     </div>
                   </div>
+                  )}
 
                   <div className="teacher-overlay">
                     <Link to="/registration" className="teacher-cta">Ro'yxatdan o'tish</Link>
@@ -104,6 +122,8 @@ export default function Teachers() {
           </div>
         </div>
       </section>
+
+      <PageFAQ page="teachers" />
 
       <ContactForm />
     </main>

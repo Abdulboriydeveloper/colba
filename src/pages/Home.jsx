@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import ContactForm from '../components/ContactForm'
+import PageFAQ from '../components/PageFAQ'
 import ResultsSlider from '../components/ResultsSlider'
 import StatsCards from '../components/StatsCards'
 import './Home.css'
@@ -296,6 +297,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <PageFAQ page="home" />
 
       <ContactForm />
     </main>

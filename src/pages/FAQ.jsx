@@ -78,7 +78,7 @@ export default function FAQ() {
               <div className="faq-contact-icon">💬</div>
               <h4>Javob topolmadingizmi?</h4>
               <p>Mutaxassislarimiz sizga yordam beradi</p>
-              <a href="tel:+998781137818" className="btn-primary" style={{ fontSize: '0.85rem', padding: '10px 18px' }}>
+              <a href="tel:+998550550040" className="btn-primary" style={{ fontSize: '0.85rem', padding: '10px 18px' }}>
                 Qo'ng'iroq qilish
               </a>
             </div>

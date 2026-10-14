@@ -246,3 +246,11 @@
 @media (max-width: 400px) {
   .teachers-grid { grid-template-columns: 1fr; }
 }
+
+.teacher-badge {
+  margin-top: 6px;
+  color: rgba(255,255,255,0.82);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
