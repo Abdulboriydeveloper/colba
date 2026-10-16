@@ -3,6 +3,7 @@ import ContactForm from '../components/ContactForm'
 import PageFAQ from '../components/PageFAQ'
 import ResultsSlider from '../components/ResultsSlider'
 import StatsCards from '../components/StatsCards'
+import homeImage from '../assets/images/homeimg.webp'
 import './Home.css'
 
 const stats = [
@@ -46,107 +47,6 @@ const previewResults = [
   { subject: 'DTM', score: '188.6', name: 'Madina S.', year: '2023', image: '/results/result-9.jpg' },
   { subject: 'Kimyo', score: '94/100', name: 'Ibrohim N.', year: '2023', image: '/results/result-10.jpg' },
 ]
-
-function BuildingIllustration() {
-  return (
-    <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg" width="100%">
-      <defs>
-        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#0a1628"/>
-          <stop offset="100%" stopColor="#0d2040"/>
-        </linearGradient>
-        <linearGradient id="buildGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#1a3a5c"/>
-          <stop offset="100%" stopColor="#102035"/>
-        </linearGradient>
-        <linearGradient id="windowGlow" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#48cae4" stopOpacity="0.9"/>
-          <stop offset="100%" stopColor="#0077b6" stopOpacity="0.6"/>
-        </linearGradient>
-      </defs>
-
-      <rect width="280" height="200" fill="url(#skyGrad)"/>
-
-      {/* Stars */}
-      <circle cx="20" cy="15" r="1" fill="white" opacity="0.6"/>
-      <circle cx="55" cy="8" r="0.8" fill="white" opacity="0.5"/>
-      <circle cx="240" cy="20" r="1" fill="white" opacity="0.7"/>
-      <circle cx="260" cy="10" r="0.8" fill="white" opacity="0.4"/>
-      <circle cx="100" cy="5" r="0.7" fill="white" opacity="0.5"/>
-      <circle cx="180" cy="12" r="1" fill="white" opacity="0.6"/>
-
-      {/* Ground */}
-      <rect x="0" y="185" width="280" height="15" fill="#0d1f35"/>
-
-      {/* Main building */}
-      <rect x="80" y="40" width="120" height="145" fill="url(#buildGrad)" rx="2"/>
-      <line x1="140" y1="40" x2="140" y2="185" stroke="rgba(0,180,216,0.12)" strokeWidth="0.5"/>
-      <line x1="80" y1="80" x2="200" y2="80" stroke="rgba(0,180,216,0.1)" strokeWidth="0.5"/>
-      <line x1="80" y1="120" x2="200" y2="120" stroke="rgba(0,180,216,0.1)" strokeWidth="0.5"/>
-      <line x1="80" y1="155" x2="200" y2="155" stroke="rgba(0,180,216,0.1)" strokeWidth="0.5"/>
-
-      {/* Side building left */}
-      <rect x="20" y="75" width="65" height="110" fill="#112238" rx="2"/>
-      <line x1="20" y1="110" x2="85" y2="110" stroke="rgba(0,180,216,0.08)" strokeWidth="0.5"/>
-      <line x1="20" y1="140" x2="85" y2="140" stroke="rgba(0,180,216,0.08)" strokeWidth="0.5"/>
-
-      {/* Side building right */}
-      <rect x="195" y="90" width="65" height="95" fill="#112238" rx="2"/>
-      <line x1="195" y1="120" x2="260" y2="120" stroke="rgba(0,180,216,0.08)" strokeWidth="0.5"/>
-      <line x1="195" y1="148" x2="260" y2="148" stroke="rgba(0,180,216,0.08)" strokeWidth="0.5"/>
-
-      {/* Main building windows row 1 */}
-      <rect x="93" y="52" width="16" height="20" fill="url(#windowGlow)" rx="2" opacity="0.9"/>
-      <rect x="117" y="52" width="16" height="20" fill="url(#windowGlow)" rx="2" opacity="0.7"/>
-      <rect x="141" y="52" width="16" height="20" fill="url(#windowGlow)" rx="2" opacity="0.85"/>
-      <rect x="165" y="52" width="16" height="20" fill="url(#windowGlow)" rx="2" opacity="0.6"/>
-
-      {/* Row 2 */}
-      <rect x="93" y="88" width="16" height="20" fill="url(#windowGlow)" rx="2" opacity="0.7"/>
-      <rect x="117" y="88" width="16" height="20" fill="url(#windowGlow)" rx="2" opacity="0.9"/>
-      <rect x="141" y="88" width="16" height="20" fill="url(#windowGlow)" rx="2" opacity="0.6"/>
-      <rect x="165" y="88" width="16" height="20" fill="url(#windowGlow)" rx="2" opacity="0.8"/>
-
-      {/* Row 3 */}
-      <rect x="93" y="127" width="16" height="20" fill="url(#windowGlow)" rx="2" opacity="0.6"/>
-      <rect x="117" y="127" width="16" height="20" fill="url(#windowGlow)" rx="2" opacity="0.75"/>
-      <rect x="141" y="127" width="16" height="20" fill="url(#windowGlow)" rx="2" opacity="0.9"/>
-      <rect x="165" y="127" width="16" height="20" fill="url(#windowGlow)" rx="2" opacity="0.5"/>
-
-      {/* Door */}
-      <rect x="127" y="158" width="26" height="27" fill="#0d1f35" rx="2"/>
-      <rect x="129" y="160" width="10" height="25" fill="rgba(72,202,228,0.25)" rx="1"/>
-      <rect x="141" y="160" width="10" height="25" fill="rgba(72,202,228,0.25)" rx="1"/>
-
-      {/* Left building windows */}
-      <rect x="28" y="83" width="12" height="16" fill="rgba(72,202,228,0.4)" rx="1"/>
-      <rect x="46" y="83" width="12" height="16" fill="rgba(72,202,228,0.55)" rx="1"/>
-      <rect x="63" y="83" width="12" height="16" fill="rgba(72,202,228,0.35)" rx="1"/>
-      <rect x="28" y="117" width="12" height="16" fill="rgba(72,202,228,0.5)" rx="1"/>
-      <rect x="46" y="117" width="12" height="16" fill="rgba(72,202,228,0.3)" rx="1"/>
-      <rect x="63" y="117" width="12" height="16" fill="rgba(72,202,228,0.45)" rx="1"/>
-      <rect x="28" y="148" width="12" height="16" fill="rgba(72,202,228,0.35)" rx="1"/>
-      <rect x="46" y="148" width="12" height="16" fill="rgba(72,202,228,0.55)" rx="1"/>
-
-      {/* Right building windows */}
-      <rect x="202" y="98" width="12" height="16" fill="rgba(72,202,228,0.45)" rx="1"/>
-      <rect x="220" y="98" width="12" height="16" fill="rgba(72,202,228,0.3)" rx="1"/>
-      <rect x="238" y="98" width="12" height="16" fill="rgba(72,202,228,0.5)" rx="1"/>
-      <rect x="202" y="127" width="12" height="16" fill="rgba(72,202,228,0.35)" rx="1"/>
-      <rect x="220" y="127" width="12" height="16" fill="rgba(72,202,228,0.6)" rx="1"/>
-      <rect x="238" y="127" width="12" height="16" fill="rgba(72,202,228,0.4)" rx="1"/>
-      <rect x="202" y="155" width="12" height="16" fill="rgba(72,202,228,0.5)" rx="1"/>
-      <rect x="220" y="155" width="12" height="16" fill="rgba(72,202,228,0.35)" rx="1"/>
-
-      {/* COLBA sign */}
-      <rect x="104" y="28" width="72" height="14" fill="rgba(0,180,216,0.2)" rx="3" stroke="rgba(72,202,228,0.5)" strokeWidth="0.8"/>
-      <text x="140" y="38" fontFamily="sans-serif" fontSize="7" fontWeight="700" fill="#48cae4" textAnchor="middle" letterSpacing="2">COLBA</text>
-
-      {/* Ground glow */}
-      <rect x="60" y="182" width="160" height="4" fill="rgba(0,180,216,0.15)" rx="2"/>
-    </svg>
-  )
-}
 
 export default function Home() {
   return (
@@ -224,7 +124,7 @@ export default function Home() {
 
                 <div className="building-card">
                   <div className="building-svg-wrap">
-                    <BuildingIllustration />
+                    <img className="building-image" src={homeImage} alt="Colba o'quv markazi binosi" />
                   </div>
                   <div className="building-footer">
                     <span className="building-name">Colba O'quv Markazi</span>

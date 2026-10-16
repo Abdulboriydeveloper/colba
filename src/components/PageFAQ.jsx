@@ -1,16 +1,13 @@
 import { pageFaqs } from '../data/pageFaqs'
 import './PageFAQ.css'
 
-export default function PageFAQ({ page, title = "Ko'p beriladigan savollar" }) {
-  const items = pageFaqs[page]
-  if (!items?.length) return null
-
+export default function PageFAQ({ title = "Ko'p beriladigan savollar" }) {
   return (
     <section className="page-faq section">
       <div className="container">
         <h2 className="section-title">{title}</h2>
         <div className="page-faq-list">
-          {items.map((item, i) => (
+          {pageFaqs.map((item, i) => (
             <div className="page-faq-item" key={item.q}>
               <span className="page-faq-num">{String(i + 1).padStart(2, '0')}</span>
               <div>
